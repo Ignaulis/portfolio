@@ -1,21 +1,52 @@
+'use client'
+
 // imports
-import Shapes from '../threejs/model';
+import Nav from '../components/navbar/Nav';
+import StarSkyBackground from '../threejs/background';
+import HeroScene from '../threejs/heroScene';
+import { motion } from 'framer-motion';
+import { motionLoadAnimate } from '../data/motionLoadAnimate';
+import Hero from '../components/hero/hero';
+import { MobileContext } from '../context/mobileContext';
 
 export default function Home() {
+
+
     return (
         <div className='relative w-screen h-screen overflow-hidden'>
-            {/* canvas */}
+            {/* canvas background */}
             <div className='absolute inset-0'>
-                <Shapes />
+                <StarSkyBackground />
             </div>
 
-            {/* main content */}
-            <div className='absolute inset-0 z-10 h-screen overflow-y-auto'>
-                {/* <h3 className='text-white text-5xl'>
-                    Hi, I'm Ignas
-                </h3> */}
+            <MobileContext>
 
-            </div>
+                {/* main content */}
+                <div className='absolute inset-0 z-10 h-screen overflow-y-auto'>
+
+                    <Nav />
+
+                    {/* hero section */}
+                    <motion.div
+                        initial={motionLoadAnimate.initial}
+                        animate={motionLoadAnimate.animate}
+                        transition={{ duration: 3 }}
+                        className='flex w-full h-max mt-20 flex-wrap lg:flex-nowrap'
+                    >
+                        <div className='w-full h-[600px] lg:w-1/2'>
+                            <Hero />
+                        </div>
+                        <div className='w-full lg:w-1/2 h-[600px] lg:mt-20 mt-0'>
+                            <HeroScene />
+                        </div>
+                    </motion.div>
+
+
+
+                </div>
+
+            </MobileContext>
+
         </div>
     );
 }
