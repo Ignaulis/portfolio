@@ -26,7 +26,7 @@ export default function Home() {
                 <div className='absolute inset-0 z-10 h-screen overflow-y-auto'>
 
                     <Nav />
-                    <div className='w-full px-10 flex flex-col'>
+                    <div className='w-full flex flex-col'>
 
                         {/* hero section */}
                         <motion.div
@@ -43,7 +43,11 @@ export default function Home() {
                             </div>
                             <RocketAnimation />
                         </motion.div>
-                        <Slider />
+                        <div className='flex flex-col gap-5 mb-10'>
+                            <Slider left />
+                            <Slider right />
+                        </div>
+
 
                     </div>
 
