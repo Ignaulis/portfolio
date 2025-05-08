@@ -11,7 +11,7 @@ export default function NavButton({ children, click, index, hover, setHover }) {
         <motion.div
             initial='initial'
             whileHover='hovered'
-            className={`relative block overflow-hidden whitespace-nowrap text-white uppercase sm:text-md md:text-2xl lg:text-2xl text-xl cursor-pointer p-0 m-0 transition-opacity duration-300 ${
+            className={`relative block overflow-hidden whitespace-nowrap text-white uppercase sm:text-md md:text-2xl lg:text-2xl text-xl cursor-pointer p-0 transition-opacity duration-300 ${
                 hover !== null && hover !== index ? 'opacity-50' : 'opacity-100'
             }`}
             onMouseEnter={() => setHover(index)}

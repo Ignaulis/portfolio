@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { motionLoadAnimate } from '../data/motionLoadAnimate';
 import Hero from '../components/hero/hero';
 import { MobileContext } from '../context/mobileContext';
+import Slider from '../components/hero/slider';
 
 export default function Home() {
 
@@ -40,6 +41,7 @@ export default function Home() {
                             <HeroScene />
                         </div>
                     </motion.div>
+                    {/* <Slider /> */}
 
 
 

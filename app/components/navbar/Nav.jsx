@@ -26,9 +26,9 @@ export default function Nav() {
             initial={motionLoadAnimate.initial}
             animate={motionLoadAnimate.animate}
             transition={motionLoadAnimate.transition}
-            className='fixed top-0 left-0 w-full bg-black z-50 border-b-1 border-white'
+            className='fixed top-3 left-3 right-3 py-4.5 rounded-2xl z-50 bg-white/10 backdrop-blur-md shadow-lg border border-white/20'
         >
-            <section className='w-full flex flex-wrap justify-center gap-x-10 gap-y-3 items-center py-2'>
+            <section className='w-full flex flex-wrap justify-center gap-x-10 gap-y-3 items-center'>
                 {navButtons.map((button, index) => (
                     <NavButton
                         key={index}
@@ -50,7 +50,7 @@ export default function Nav() {
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.5 }}
-                        className='w-full overflow-hidden bg-black'
+                        className='w-full overflow-hidden'
                     >
                         <NavContactsDrop />
                     </motion.section>

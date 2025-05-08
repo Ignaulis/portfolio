@@ -6,7 +6,7 @@ import '../../styles/buttons.css';
 export default function Hero() {
     return (
         <motion.div className='flex flex-col justify-end sm:justify-center gap-12 h-full items-center select-none'>
-            <div className='uppercase text-4xl lg:text-6xl md:text-5xl text-white w-max tracking-widest '>
+            <div className='uppercase font-bold text-4xl lg:text-6xl md:text-5xl text-white w-max tracking-widest '>
                 <h2>
                     {'< '}
                     <span className='text-[#60a5fa]'>Frontend</span>
