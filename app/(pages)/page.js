@@ -9,9 +9,9 @@ import { motionLoadAnimate } from '../data/motionLoadAnimate';
 import Hero from '../components/hero/hero';
 import { MobileContext } from '../context/mobileContext';
 import Slider from '../components/hero/slider';
+import RocketAnimation from '../components/hero/rocketAnimation';
 
 export default function Home() {
-
 
     return (
         <div className='relative w-screen h-screen overflow-hidden'>
@@ -26,23 +26,26 @@ export default function Home() {
                 <div className='absolute inset-0 z-10 h-screen overflow-y-auto'>
 
                     <Nav />
+                    <div className='w-full px-10 flex flex-col'>
 
-                    {/* hero section */}
-                    <motion.div
-                        initial={motionLoadAnimate.initial}
-                        animate={motionLoadAnimate.animate}
-                        transition={{ duration: 3 }}
-                        className='flex w-full h-max mt-20 flex-wrap lg:flex-nowrap'
-                    >
-                        <div className='w-full h-[600px] lg:w-1/2'>
-                            <Hero />
-                        </div>
-                        <div className='w-full lg:w-1/2 h-[600px] lg:mt-20 mt-0'>
-                            <HeroScene />
-                        </div>
-                    </motion.div>
-                    {/* <Slider /> */}
+                        {/* hero section */}
+                        <motion.div
+                            initial={motionLoadAnimate.initial}
+                            animate={motionLoadAnimate.animate}
+                            transition={{ duration: 3 }}
+                            className='flex w-full h-max mt-20 flex-wrap lg:flex-nowrap'
+                        >
+                            <div className='w-full h-[600px] lg:w-1/2'>
+                                <Hero />
+                            </div>
+                            <div className='w-full lg:w-1/2 h-[600px] lg:mt-20 mt-0'>
+                                <HeroScene />
+                            </div>
+                            <RocketAnimation />
+                        </motion.div>
+                        <Slider />
 
+                    </div>
 
 
                 </div>

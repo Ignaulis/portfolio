@@ -1,66 +1,47 @@
-// 'use client';
-// import { motion, useMotionValue, useAnimate } from 'framer-motion';
-// import { useEffect } from 'react';
+'use client';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { icons } from '@/app/data/icons';
 
-// const Slider = () => {
-//     const images = [
-//         'https://via.placeholder.com/600x300?text=Image+1',
-//         'https://via.placeholder.com/600x300?text=Image+2',
-//         'https://via.placeholder.com/600x300?text=Image+3',
-//     ];
-//     const containerWidth = images.length * 600;
-//     const [scope, animate] = useAnimate();
+const Slider = () => {
+    const slides = [...icons, ...icons];
 
-//     useEffect(() => {
-//         animate(
-//             scope.current,
-//             { x: -600 },
-//             {
-//                 repeat: Infinity,
-//                 repeatType: 'loop',
-//                 duration: 3, // Sureguliuokite greitį
-//                 ease: 'linear',
-//                 onComplete: () => {
-//                     animate(scope.current, { x: 0 }, { duration: 0 }); // Akimirksniu grąžiname į pradinę padėtį
-//                 },
-//             },
-//         );
+    return (
+        <div className='relative w-full overflow-hidden'>
+            <div className='absolute left-0 top-0 h-full w-1/6 bg-gradient-to-r from-white/80 via-transparent to-transparent z-10' />
+            <div className='absolute right-0 top-0 h-full w-1/6 bg-gradient-to-l from-white/80 via-transparent to-transparent z-10' />
 
-//         return () => {
-//             animate.stop();
-//         };
-//     }, [scope, animate]);
+            <motion.div
+                className='flex bg-white/10 backdrop-blur-md shadow-lg border border-white/20'
+                style={{ width: 'max-content' }}
+                animate={{
+                    x: ['0%', '-50%'],
+                }}
+                transition={{
+                    repeat: Infinity,
+                    repeatType: 'loop',
+                    ease: 'linear',
+                    duration: 30,
+                }}
+            >
+                {slides.map((item, index) => (
+                    <div
+                        key={index}
+                        className='flex items-center justify-center text-white'
+                        style={{
+                            width: '165px',
+                            height: '50px',
+                            flexShrink: 0,
+                            fontSize: '2rem',
+                        }}
+                    >
+                        {item.icon && <item.icon className='mr-2' />}
+                        <span className='text-sm'>{item.name}</span>
+                    </div>
+                ))}
+            </motion.div>
+        </div>
+    );
+};
 
-//     return (
-//         <div className='w-full overflow-hidden relative' ref={scope}>
-//             <motion.div
-//                 style={{
-//                     display: 'flex',
-//                     width: `${containerWidth * 2}px`,
-//                 }}
-//             >
-//                 {/* Pirmosios nuotraukos */}
-//                 {images.map((image, index) => (
-//                     <motion.img
-//                         key={index}
-//                         src={image}
-//                         alt={`Image ${index + 1}`}
-//                         style={{ width: '600px', height: '300px' }}
-//                     />
-//                 ))}
-
-//                 {/* Klonuotos nuotraukos */}
-//                 {images.map((image, index) => (
-//                     <motion.img
-//                         key={`clone-${index}`}
-//                         src={image}
-//                         alt={`Image ${index + 1}`}
-//                         style={{ width: '600px', height: '300px' }}
-//                     />
-//                 ))}
-//             </motion.div>
-//         </div>
-//     );
-// };
-
-// export default Slider;
+export default Slider;
