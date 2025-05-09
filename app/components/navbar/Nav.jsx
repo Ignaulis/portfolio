@@ -16,9 +16,9 @@ export default function Nav() {
 
     const navButtons = [
         { label: 'home', onClick: () => console.log('Home Clicked') },
-        { label: 'projects', onClick: () => console.log('Projects Clicked') },
+        { label: 'work', onClick: () => console.log('Projects Clicked') },
         { label: 'about', onClick: () => console.log('About Clicked') },
-        { label: 'contacts', onClick: handleShowContacts },
+        { label: 'contact', onClick: handleShowContacts },
     ];
 
     return (

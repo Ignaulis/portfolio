@@ -1,6 +1,13 @@
 
 import { Quicksand } from 'next/font/google';
 import './styles/globals.css';
+import { M_PLUS_Rounded_1c } from 'next/font/google';
+
+const mPlusRounded = M_PLUS_Rounded_1c({
+    weight: ['400', '700'], // Choose the weights you need
+    subsets: ['latin'],
+    display: 'swap',
+});
 
 const quicksand = Quicksand({
     subsets: ['latin'],
@@ -15,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang='en'>
-            <body className={`${quicksand.variable} antialiased`}>
+            <body className={`${mPlusRounded.variable} antialiased`}>
 
                 {children}
             </body>

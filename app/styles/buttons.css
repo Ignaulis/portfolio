@@ -1,10 +1,10 @@
 .button-hire {
     text-transform: uppercase;
     font-size: 1.875rem;
-    width: 120px;
+    width: 130px;
     height: 70px;
     cursor: pointer;
-    background-image: linear-gradient(to bottom, #6091fa, #254deb);
+    background-image: linear-gradient(to bottom, #fa6060, #eb2525);
     color: #ffffff;
     border-radius: 1.5rem;
     border: 0;
@@ -20,7 +20,7 @@
 }
 
 .button-hire::before {
-    content: 'hire';
+    content: 'boom!';
     display: flex;
     letter-spacing: 2px;
     align-items: center;
@@ -28,7 +28,7 @@
     position: absolute;
     inset: 0;
     transform: translateY(-1rem);
-    background-image: linear-gradient(to top, #6091fa, #254deb);
+    background-image: linear-gradient(to top, #fa6060, #eb2525);
     border-radius: 1.5rem;
     z-index: -10;
     transition: transform 0.2s ease-in-out;

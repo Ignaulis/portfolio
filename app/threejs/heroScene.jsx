@@ -2,10 +2,13 @@
 
 // imports
 import { Canvas, useLoader, useFrame } from '@react-three/fiber';
-import { Center, Float } from '@react-three/drei';
+import { Center, Float, Html } from '@react-three/drei';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Suspense, useContext, useRef } from 'react';
 import { MobileContextProvider } from '../context/mobileContext';
+import { TextureLoader } from 'three';
+import dynamic from 'next/dynamic';
+import hi from '../assets/hello.json';
 
 function EarthModel() {
     const { isMobile } = useContext(MobileContextProvider);
@@ -28,15 +31,36 @@ function EarthModel() {
 
 function Spaceman() {
     const gltf = useLoader(GLTFLoader, '/spaceman_model/scene.gltf');
-
+    const cloud = useLoader(TextureLoader, '/text_cloud.png');
     const { isMobile } = useContext(MobileContextProvider);
 
+    const Lottie = dynamic(() => import('lottie-react'), {
+        ssr: false,
+    });
+
+    const position = isMobile ? [-1, 1, 6] : [-2, 1, 6];
+
     return (
-        <primitive
-            object={gltf.scene}
-            position={isMobile ? [-1, 1, 6] : [-2, 1, 6]}
-            scale={0.2}
-        />
+        <group position={position}>
+            {/* Spaceman */}
+            <primitive object={gltf.scene} scale={0.2} />
+
+            {/* Teksto dėžutė (debesėlis) */}
+            <group position={[-0.3, 1.3, 0]}>
+                {/* Fonas */}
+                <mesh>
+                    <planeGeometry args={[1.8, 1.1]} />
+                    <meshBasicMaterial map={cloud} transparent />
+                </mesh>
+
+                {/* Tekstas */}
+                <Html center position={[0.05, 0.03, 0.05]} transform>
+                    <div style={{ width: 65, height: 65 }}>
+                        <Lottie animationData={hi} loop={true} />
+                    </div>
+                </Html>
+            </group>
+        </group>
     );
 }
 

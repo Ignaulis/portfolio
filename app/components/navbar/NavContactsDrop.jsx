@@ -11,7 +11,7 @@ export default function NavContactsDrop() {
         <div className='flex w-full justify-center gap-5'>
             {contacts.map((e, i) => (
                 <a
-                    className={`text-white flex items-center mt-4 py-2 px-2 gap-1.5 text-3xl cursor-pointer transition-opacity duration-300 ${
+                    className={`text-white flex items-center mt-4 py-2 px-2 gap-1.5 text-xl cursor-pointer transition-opacity duration-300 ${
                         hovered !== null && hovered !== i
                             ? 'opacity-50'
                             : 'opacity-100'

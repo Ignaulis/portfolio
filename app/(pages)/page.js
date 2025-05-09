@@ -33,15 +33,15 @@ export default function Home() {
                             initial={motionLoadAnimate.initial}
                             animate={motionLoadAnimate.animate}
                             transition={{ duration: 3 }}
-                            className='flex w-full h-max mt-20 flex-wrap lg:flex-nowrap'
+                            className='flex w-full h-max mt-20 flex-wrap-reverse lg:flex-nowrap'
                         >
-                            <div className='w-full h-[600px] lg:w-1/2'>
+                            <div className='w-full h-max mb-10 lg:w-1/2'>
                                 <Hero />
                             </div>
                             <div className='w-full lg:w-1/2 h-[600px] lg:mt-20 mt-0'>
                                 <HeroScene />
                             </div>
-                            <RocketAnimation />
+                            {/* <RocketAnimation /> */}
                         </motion.div>
                         <div className='flex flex-col gap-5 mb-10'>
                             <Slider left />
