@@ -9,31 +9,33 @@ const Spaceman = lazy(() => import("./spaceman"));
 
 export default function HeroScene() {
   return (
-    <Canvas
-      shadows
-      camera={{
-        position: [0, 0, 10],
-      }}
-    >
-      <directionalLight
-        position={[-1, 5, 7]}
-        intensity={2.4}
-        color="#cff0fa"
-        castShadow
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
-      />
+    <div className="w-full">
+      <Canvas
+        shadows
+        camera={{
+          position: [0, 0, 10],
+        }}
+      >
+        <directionalLight
+          position={[-1, 5, 7]}
+          intensity={2.4}
+          color="#cff0fa"
+          castShadow
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+        />
 
-      <Suspense fallback={null}>
-        <OrbitingText text={`I'm Ignas Naulis`} />
+        <Suspense fallback={null}>
+          <OrbitingText text={`I'm Ignas Naulis`} />
 
-        <Center>
-          <EarthModel />
-          <Float speed={2} rotationIntensity={0.6}>
-            <Spaceman />
-          </Float>
-        </Center>
-      </Suspense>
-    </Canvas>
+          <Center>
+            <EarthModel />
+            <Float speed={2} rotationIntensity={0.6}>
+              <Spaceman />
+            </Float>
+          </Center>
+        </Suspense>
+      </Canvas>
+    </div>
   );
 }

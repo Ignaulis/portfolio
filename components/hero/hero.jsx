@@ -10,15 +10,17 @@ export default function Hero() {
   const upwork = useMemo(() => contacts.filter((e) => e.text === "UpWork"), []);
 
   return (
-    <div className="flex flex-col gap-8 lg:ml-20 h-full lg:w-1/2 w-full select-none">
+    <div className="flex flex-col gap-8 mb-12 lg:mb-0 lg:ml-20 h-full lg:w-1/2 w-full justify-center lg:items-start items-center select-none">
       <div className=" text-white uppercase font-extrabold text-6xl lg:text-7xl flex flex-col">
         <span>frontend</span>
         <span>developer</span>
       </div>
 
-      <Hr />
+      <div className="lg:w-11/12 w-1/2 flex justify-center">
+        <Hr />
+      </div>
 
-      <div className="text-white tracking-wider lg:text-start text-center text-2xl w-3/5 lg:w-full">
+      <div className="text-white tracking-wider lg:text-start text-center text-xl lg:text-2xl w-4/5 sm:w-3/5 lg:w-full">
         <span>
           I like to craft solid and scalable frontend products with great user
           experiences.

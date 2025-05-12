@@ -28,7 +28,7 @@ export default function Spaceman() {
     }
   }, [gltf]);
 
-  const position = isMobile ? [-1, 1, 6] : [-2, 1, 6];
+  const position = isMobile ? [-1, 1, 6] : [-1.5, 1, 6];
   const scale = isMobile ? 0.15 : 0.2; // Reduced scale for mobile for better performance
 
   if (!isLoaded) {
@@ -52,7 +52,7 @@ export default function Spaceman() {
 
         <Html
           center
-          position={isMobile ? [-0.09, -0.09, 0] : [0.05, 0.03, 0.05]}
+          position={isMobile ? [-0.01, 0.04, 0] : [0, 0.03, 0.05]}
           transform
         >
           <div style={{ width: 65, height: 65 }}>

@@ -32,7 +32,7 @@ export default function OrbitingText({ text }) {
       fontWeight={"bold"}
       letterSpacing={0.05}
       textAlign="center"
-      curveRadius={isMobile ? -3.4 : -5}
+      curveRadius={isMobile ? -4.4 : -5.8}
       castShadow
       font="/fonts/ComicRelief-Bold.ttf"
     >
