@@ -52,7 +52,7 @@ export default function Spaceman() {
 
         <Html
           center
-          position={isMobile ? [-0.01, 0.04, 0] : [0, 0.03, 0.05]}
+          position={isMobile ? [-0.13, -0.08, 0] : [0, 0.03, 0.05]}
           transform
         >
           <div style={{ width: 65, height: 65 }}>

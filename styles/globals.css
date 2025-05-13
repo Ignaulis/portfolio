@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+:root {
+    --font-montserrat: 'Montserrat', sans-serif;
+}
 
 body {
     overflow: hidden;

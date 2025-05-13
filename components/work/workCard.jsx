@@ -15,7 +15,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
     : `${data.description.slice(0, 280)}...`;
 
   return (
-    <div className="text-white flex lg:flex-nowrap flex-wrap items-center justify-center gap-10 bg-white/10 backdrop-blur-md shadow-lg h-max border w-full border-white/20 rounded p-1">
+    <div className="text-white flex lg:flex-nowrap flex-wrap items-center justify-center gap-4 bg-white/10 backdrop-blur-md shadow-lg h-max border w-full border-white/20 rounded p-1">
       {/* Image */}
       <div className="w-[500px]">
         <div
@@ -30,7 +30,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
       {/* Text Content */}
       <div className="w-full flex flex-col gap-6 justify-between p-3">
         {/* Header */}
-        <div className="text-3xl flex justify-between items-center">
+        <div className="text-3xl flex justify-between gap-4 flex-wrap  items-center">
           <span>{data.name}</span>
           <div className="flex gap-10">
             <a

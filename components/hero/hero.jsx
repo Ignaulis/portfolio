@@ -16,11 +16,11 @@ export default function Hero() {
         <span>developer</span>
       </div>
 
-      <div className="lg:w-11/12 w-1/2 flex justify-center">
+      <div className="lg:w-2/3 w-full flex justify-center">
         <Hr />
       </div>
 
-      <div className="text-white tracking-wider lg:text-start text-center text-xl lg:text-2xl w-4/5 sm:w-3/5 lg:w-full">
+      <div className="text-white tracking-wider lg:text-start text-center text-xl lg:text-2xl w-full lg:w-2/3">
         <span>
           I like to craft solid and scalable frontend products with great user
           experiences.

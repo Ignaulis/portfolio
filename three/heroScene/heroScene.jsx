@@ -9,7 +9,7 @@ const Spaceman = lazy(() => import("./spaceman"));
 
 export default function HeroScene() {
   return (
-    <div className="w-full">
+    <div className="lg:w-1/2 w-full h-[500px]">
       <Canvas
         shadows
         camera={{

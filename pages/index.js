@@ -10,7 +10,7 @@ export default function Home() {
     <>
 
       {/* hero */}
-      <div className='flex w-full h-max mt-30 flex-wrap lg:flex-nowrap'>
+      <div className='flex w-full lg:h-[500px] h-max mt-30 lg:mb-20 mb-4 flex-wrap lg:flex-nowrap'>
         <Hero />
         <HeroScene />
 

@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 // Lazy load NavContactsDrop component
 const NavContactsDrop = dynamic(() => import("./NavContactsDrop"), {
   ssr: false,
-  loading: () => <div>Loading contacts...</div>,
+  loading: () => <div></div>,
 });
 
 // Main navigation component
