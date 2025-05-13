@@ -23,7 +23,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
           onClick={setOpenImages}
           aria-label={`View ${data.name} images`}
         >
-          <img src={data.img} alt={data.name} />
+          <img className="rounded" src={data.img} alt={data.name} />
         </div>
       </div>
 

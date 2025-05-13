@@ -36,3 +36,9 @@ body {
         background-position: 0% 50%;
     }
 }
+
+.gradient-text {
+    background-image: linear-gradient(to bottom, #ffffff, #ffffff, #ffffff70, #ffffff10);
+    -webkit-background-clip: text;
+    background-clip: text;
+}

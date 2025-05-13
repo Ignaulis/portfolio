@@ -20,7 +20,7 @@ export default function Nav() {
 
   // Context
   const { isMobile } = useContext(MobileContext);
-  const { workRef, homeRef } = useContext(ScrollContext);
+  const { workRef, homeRef, aboutRef } = useContext(ScrollContext);
 
   // functions
   const handleIsOpen = useCallback(() => {
@@ -43,11 +43,14 @@ export default function Nav() {
   const handlehomeScroll = () => {
     homeRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+  const handleabouteScroll = () => {
+    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const navButtons = [
     { label: "home", onClick: handlehomeScroll },
     { label: "work", onClick: handleWorkScroll },
-    { label: "about", onClick: () => console.log("About Clicked") },
+    { label: "about", onClick: handleabouteScroll },
     { label: "contact", onClick: handleShowContacts },
   ];
 

@@ -10,7 +10,7 @@ export default function WorkFilter({ clickedTag, setClickedTag }) {
     );
   };
 
-  const displayMore = more ? Tags : Tags.slice(0, 5);
+  const displayMore = more ? Tags : Tags.slice(0, 6);
 
   return (
     <div className="flex gap-6 text-sm w-full text-white">
@@ -19,12 +19,13 @@ export default function WorkFilter({ clickedTag, setClickedTag }) {
           let opacityClass = "";
           if (!more) {
             const dimLevel = displayMore.length - index;
-            if (dimLevel <= 4) {
+            if (dimLevel <= 5) {
               const opacityMap = {
-                1: "opacity-60",
-                2: "opacity-70",
-                3: "opacity-80",
-                4: "opacity-90",
+                1: "opacity-50",
+                2: "opacity-60",
+                3: "opacity-70",
+                4: "opacity-80",
+                5: "opacity-90",
               };
               opacityClass = opacityMap[dimLevel] || "";
             }
