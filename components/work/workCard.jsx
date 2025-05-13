@@ -78,7 +78,9 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
             <div
               key={tag}
               className={`bg-white/10 backdrop-blur-md shadow-lg border border-white/20 px-2 py-1 rounded-2xl select-none transition-transform duration-200 ${
-                clickedTag.includes(tag) ? "text-green-400 scale-110" : ""
+                clickedTag.includes(tag)
+                  ? "bg-white/40 border-white/40 scale-110"
+                  : ""
               }`}
             >
               {tag}

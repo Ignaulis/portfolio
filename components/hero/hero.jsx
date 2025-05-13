@@ -3,14 +3,19 @@ import { MobileContext } from "@/context/mobileContext";
 import { contacts } from "@/assets/data/contacts";
 import HeroButton from "../ui/heroButton";
 import Hr from "../ui/hr";
+import { ScrollContext } from "@/context/scrollContext";
 
 export default function Hero() {
   const { setShowForm } = useContext(MobileContext);
+  const { homeRef } = useContext(ScrollContext);
 
   const upwork = useMemo(() => contacts.filter((e) => e.text === "UpWork"), []);
 
   return (
-    <div className="flex flex-col gap-8 mb-12 lg:mb-0 lg:ml-20 h-full lg:w-1/2 w-full justify-center lg:items-start items-center select-none">
+    <div
+      className="flex flex-col scroll-mt-32 gap-8 mb-12 lg:mb-0 lg:ml-20 h-full lg:w-1/2 w-full justify-center lg:items-start items-center select-none"
+      ref={homeRef}
+    >
       <div className=" text-white uppercase font-extrabold text-6xl lg:text-7xl flex flex-col">
         <span>frontend</span>
         <span>developer</span>

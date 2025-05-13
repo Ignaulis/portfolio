@@ -2,17 +2,21 @@ import { useContext, useMemo, useState, useCallback } from "react";
 import dynamic from "next/dynamic";
 import { MobileContext } from "@/context/mobileContext";
 import { motion } from "framer-motion"; // gali būti lazy-load’inamas, jei dar nori labiau optimizuot
+import Astronout from "../../assets/lottie/astronaut-with-space-shuttle.json";
 
 // ⚠️ Dynamic (lazy) importai
 const WorkFilter = dynamic(() => import("./workFilter"));
 const WorkCard = dynamic(() => import("./workCard"));
 const WorkImages = dynamic(() => import("./workImages"));
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 // Duomenys
 import { MyWork } from "@/assets/data/myWork";
+import { ScrollContext } from "@/context/scrollContext";
 
 export default function Work() {
   const { isMobile } = useContext(MobileContext);
+  const { workRef } = useContext(ScrollContext);
   const [clickedTag, setClickedTag] = useState([]);
   const [openImages, setOpenImages] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,7 +26,7 @@ export default function Work() {
   const filteredWork = useMemo(() => {
     if (clickedTag.length === 0) return MyWork;
     return MyWork.filter((work) =>
-      work.tags.some((tag) => clickedTag.includes(tag))
+      clickedTag.every((tag) => work.tags.includes(tag))
     );
   }, [clickedTag]);
 
@@ -64,16 +68,20 @@ export default function Work() {
 
   return (
     <div
-      className={`flex flex-col gap-10 ${
-        isMobile ? "mx-2 items-center" : "mx-20"
+      className={`flex mb-20 scroll-mt-40 flex-col gap-10 ${
+        isMobile ? "px-2 items-center" : "px-20"
       } h-max overflow-hidden`}
+      ref={workRef}
     >
-      <div className="text-7xl w-max italic mb-6 text-white font-medium select-none">
-        <span>My Work</span>
+      <div className="lg:text-7xl sm:text-6xl text-5xl flex items-center lg:flex-row flex-col lg:w-max w-full justify-center italic mb-6 tracking-widest text-white font-bold select-none">
+        <div className="w-40 h-40">
+          <Lottie animationData={Astronout} loop={true} />
+        </div>
+        <span>{`{...My Work}`}</span>
       </div>
 
       <div className="flex items-start flex-wrap lg:flex-nowrap w-full h-max gap-5">
-        <span className="text-white text-2xl">Filter:</span>
+        <span className="text-white sm:text-3xl text-2xl">Filter:</span>
         <WorkFilter clickedTag={clickedTag} setClickedTag={setClickedTag} />
       </div>
 
@@ -88,30 +96,36 @@ export default function Work() {
           transition={{ duration: 0.5 }}
           className="flex flex-col gap-8 w-full"
         >
-          {paginatedContent.map((data, i) => {
-            const realIndex = (currentPage - 1) * itemsPerPage + i;
-            return (
-              <div key={realIndex}>
-                <WorkCard
-                  setOpenImages={() => handleImagesToggle(realIndex)}
-                  data={data}
-                  clickedTag={clickedTag}
-                />
-                <WorkImages
-                  openImages={openImages === realIndex}
-                  setOpenImages={() => setOpenImages(null)}
-                  images={data.images}
-                />
-              </div>
-            );
-          })}
+          {paginatedContent.length === 0 ? (
+            <div className="text-center text-white text-3xl mt-20 select-none italic opacity-70">
+              No work found with selected tags.
+            </div>
+          ) : (
+            paginatedContent.map((data, i) => {
+              const realIndex = (currentPage - 1) * itemsPerPage + i;
+              return (
+                <div key={realIndex}>
+                  <WorkCard
+                    setOpenImages={() => handleImagesToggle(realIndex)}
+                    data={data}
+                    clickedTag={clickedTag}
+                  />
+                  <WorkImages
+                    openImages={openImages === realIndex}
+                    setOpenImages={() => setOpenImages(null)}
+                    images={data.images}
+                  />
+                </div>
+              );
+            })
+          )}
         </motion.div>
       </div>
 
       <motion.div
         layout
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="self-center flex gap-4 mt-5"
+        className="self-center flex pb-3 gap-4 mt-5"
       >
         {Array.from({ length: totalPages }, (_, i) => {
           const page = i + 1;

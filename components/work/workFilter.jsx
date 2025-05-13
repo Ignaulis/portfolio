@@ -18,7 +18,7 @@ export default function WorkFilter({ clickedTag, setClickedTag }) {
         {displayMore.map((tag) => (
           <button
             key={tag}
-            className={`cursor-pointer bg-white/10 backdrop-blur-md shadow-lg border border-white/20 p-2 px-4 rounded-3xl transition-all duration-200 ease-in-out hover:opacity-75 ${
+            className={`cursor-pointer sm:text-lg text-md bg-white/10 backdrop-blur-md shadow-lg border border-white/20 p-2 px-4 rounded-3xl transition-all duration-200 ease-in-out hover:opacity-75 ${
               clickedTag.includes(tag) ? "bg-white/40" : "bg-white/10"
             }`}
             onClick={() => handleClick(tag)}
@@ -27,9 +27,8 @@ export default function WorkFilter({ clickedTag, setClickedTag }) {
             {tag}
           </button>
         ))}
-        {!more && <span className="text-4xl select-none">...</span>}
 
-        <div className="flex flex-col">
+        <div className="flex ml-4 flex-col">
           <button
             onClick={() => setClickedTag([])}
             className={`${

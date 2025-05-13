@@ -5,44 +5,48 @@ import dynamic from "next/dynamic";
 import { MobileContext } from "@/context/mobileContext";
 import { MenuButton } from "./mobileHamburg";
 import { motion } from "framer-motion";
+import { ScrollContext } from "@/context/scrollContext";
 
-// Lazy load NavContactsDrop component
 const NavContactsDrop = dynamic(() => import("./NavContactsDrop"), {
   ssr: false,
   loading: () => <div></div>,
 });
 
-// Main navigation component
 export default function Nav() {
-  // State to control the visibility of the contacts dropdown
+  //states
   const [showContacts, setShowContacts] = useState(false);
-  // State to manage hover effect on navigation buttons
   const [hover, setHover] = useState(null);
-  // State to control the mobile navigation menu open/close state
   const [isOpen, setIsOpen] = useState(false);
 
-  // Callback function to toggle the mobile menu open/close state
+  // Context
+  const { isMobile } = useContext(MobileContext);
+  const { workRef, homeRef } = useContext(ScrollContext);
+
+  // functions
   const handleIsOpen = useCallback(() => {
     setIsOpen((prev) => !prev);
   }, []);
 
-  // Context to check if the device is mobile
-  const { isMobile } = useContext(MobileContext);
-
   // Callback function to toggle the visibility of the contacts dropdown
   const handleShowContacts = useCallback(() => {
-    // Allow showing contacts only if the mobile menu is open on mobile devices
     if (isMobile && isOpen) {
       setShowContacts((prev) => !prev);
     } else if (!isMobile) {
-      setShowContacts((prev) => !prev); // Keep the behavior for desktop
+      setShowContacts((prev) => !prev);
     }
   }, [isMobile, isOpen, setShowContacts]);
 
-  // Array defining the navigation buttons and their labels/actions
+  // scrolling func
+  const handleWorkScroll = () => {
+    workRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const handlehomeScroll = () => {
+    homeRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const navButtons = [
-    { label: "home", onClick: () => console.log("Home Clicked") },
-    { label: "work", onClick: () => console.log("Projects Clicked") },
+    { label: "home", onClick: handlehomeScroll },
+    { label: "work", onClick: handleWorkScroll },
     { label: "about", onClick: () => console.log("About Clicked") },
     { label: "contact", onClick: handleShowContacts },
   ];

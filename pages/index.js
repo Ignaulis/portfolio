@@ -3,6 +3,9 @@ import Hero from "@/components/hero/hero";
 import Slider from "@/components/hero/slider";
 import Work from "@/components/work/work";
 import HeroScene from "@/three/heroScene/heroScene";
+import { motion } from "framer-motion";
+import { motionLoadAnimate } from "@/assets/data/framerMotion";
+import About from "@/components/about/about";
 
 
 export default function Home() {
@@ -10,13 +13,19 @@ export default function Home() {
     <>
 
       {/* hero */}
-      <div className='flex w-full lg:h-[500px] h-max mt-30 lg:mb-20 mb-4 flex-wrap lg:flex-nowrap'>
+      <motion.div
+        initial={motionLoadAnimate.initial}
+        animate={motionLoadAnimate.animate}
+        transition={motionLoadAnimate.transition}
+        className='flex w-full lg:h-[500px] h-max mt-30 lg:mb-20 mb-4 flex-wrap lg:flex-nowrap'
+      >
+
         <Hero />
         <HeroScene />
 
         {/* contact form */}
         <ContactForm />
-      </div>
+      </motion.div>
 
 
       {/* slider */}
@@ -28,6 +37,7 @@ export default function Home() {
 
       {/* work */}
       <Work />
+      <About />
     </>
   );
 }

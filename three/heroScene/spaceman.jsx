@@ -54,6 +54,7 @@ export default function Spaceman() {
           center
           position={isMobile ? [-0.13, -0.08, 0] : [0, 0.03, 0.05]}
           transform
+          zIndexRange={[10, 0]}
         >
           <div style={{ width: 65, height: 65 }}>
             <Lottie animationData={hi} loop={true} />
