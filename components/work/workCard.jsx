@@ -15,7 +15,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
     : `${data.description.slice(0, 280)}...`;
 
   return (
-    <div className="text-white flex lg:flex-nowrap flex-wrap items-center justify-center gap-4 bg-white/10 backdrop-blur-md shadow-lg h-max border w-full border-white/20 rounded p-1">
+    <div className="text-white flex lg:flex-nowrap flex-wrap items-center justify-center gap-4 bg-gradient-to-r from-blue-200/10 via-sky-300/10 to-violet-500/10 backdrop-blur-md shadow-lg h-max border w-full border-white/20 rounded p-1">
       {/* Image */}
       <div className="w-[500px]">
         <div
@@ -28,7 +28,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
       </div>
 
       {/* Text Content */}
-      <div className="w-full flex flex-col gap-6 justify-between p-3">
+      <div className="relative overflow-hidden w-full flex flex-col gap-6 justify-between p-3">
         {/* Header */}
         <div className="text-3xl flex justify-between gap-4 flex-wrap  items-center">
           <span>{data.name}</span>
@@ -61,7 +61,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
 
         {/* Description */}
         <div>
-          <p className="tracking-wider leading-7">
+          <p className="tracking-wider text-white leading-7">
             {renderDescription}
             <button
               onClick={handleToggleDescription}

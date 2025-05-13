@@ -10,7 +10,7 @@ export default function OrbitingText({ text }) {
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime();
 
-    const radius = isMobile ? 3.9 : 4.8;
+    const radius = isMobile ? 4.2 : 5.1;
     const speed = -0.85;
 
     if (textRef.current) {
@@ -25,7 +25,7 @@ export default function OrbitingText({ text }) {
   return (
     <Text
       ref={textRef}
-      fontSize={isMobile ? "0.8" : 1}
+      fontSize={isMobile ? "0.7" : 0.8}
       color="white"
       maxWidth={200}
       lineHeight={1}
@@ -34,6 +34,7 @@ export default function OrbitingText({ text }) {
       textAlign="center"
       curveRadius={isMobile ? -4.4 : -5.8}
       castShadow
+      receiveShadow
       font="/fonts/ComicRelief-Bold.ttf"
     >
       {text}

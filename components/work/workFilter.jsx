@@ -15,18 +15,34 @@ export default function WorkFilter({ clickedTag, setClickedTag }) {
   return (
     <div className="flex gap-6 text-sm w-full text-white">
       <div className="flex items-end gap-2 flex-wrap">
-        {displayMore.map((tag) => (
-          <button
-            key={tag}
-            className={`cursor-pointer sm:text-lg text-md bg-white/10 backdrop-blur-md shadow-lg border border-white/20 p-2 px-4 rounded-3xl transition-all duration-200 ease-in-out hover:opacity-75 ${
-              clickedTag.includes(tag) ? "bg-white/40" : "bg-white/10"
-            }`}
-            onClick={() => handleClick(tag)}
-            aria-label={`Filter by tag: ${tag}`}
-          >
-            {tag}
-          </button>
-        ))}
+        {displayMore.map((tag, index) => {
+          let opacityClass = "";
+          if (!more) {
+            const dimLevel = displayMore.length - index;
+            if (dimLevel <= 4) {
+              const opacityMap = {
+                1: "opacity-60",
+                2: "opacity-70",
+                3: "opacity-80",
+                4: "opacity-90",
+              };
+              opacityClass = opacityMap[dimLevel] || "";
+            }
+          }
+
+          return (
+            <button
+              key={tag}
+              className={`cursor-pointer sm:text-lg text-md bg-white/10 backdrop-blur-md shadow-lg border border-white/20 p-2 px-4 rounded-3xl transition-all duration-200 ease-in-out hover:opacity-75 ${
+                clickedTag.includes(tag) ? "bg-white/40" : "bg-white/10"
+              } ${opacityClass}`}
+              onClick={() => handleClick(tag)}
+              aria-label={`Filter by tag: ${tag}`}
+            >
+              {tag}
+            </button>
+          );
+        })}
 
         <div className="flex ml-4 flex-col">
           <button

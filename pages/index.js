@@ -6,6 +6,7 @@ import HeroScene from "@/three/heroScene/heroScene";
 import { motion } from "framer-motion";
 import { motionLoadAnimate } from "@/assets/data/framerMotion";
 import About from "@/components/about/about";
+import Footer from "@/components/footer/footer";
 
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
         initial={motionLoadAnimate.initial}
         animate={motionLoadAnimate.animate}
         transition={motionLoadAnimate.transition}
-        className='flex w-full lg:h-[500px] h-max mt-30 lg:mb-20 mb-4 flex-wrap lg:flex-nowrap'
+        className='flex w-full lg:h-[500px] h-max mt-40 lg:mb-8 mb-4 flex-wrap lg:flex-nowrap'
       >
 
         <Hero />
@@ -29,7 +30,7 @@ export default function Home() {
 
 
       {/* slider */}
-      <div className='flex flex-col gap-5 mb-28'>
+      <div className='flex flex-col gap-5 sm:mb-18 mb-12'>
         <Slider left />
         <Slider right />
       </div>
@@ -38,6 +39,10 @@ export default function Home() {
       {/* work */}
       <Work />
       <About />
+
+
+      {/* footer */}
+      <Footer />
     </>
   );
 }

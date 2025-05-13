@@ -18,7 +18,7 @@ export default function HeroScene() {
       >
         <directionalLight
           position={[-1, 5, 7]}
-          intensity={2.4}
+          intensity={2.8}
           color="#cff0fa"
           castShadow
           shadow-mapSize-width={1024}

@@ -68,12 +68,12 @@ export default function Work() {
 
   return (
     <div
-      className={`flex mb-20 scroll-mt-40 flex-col gap-10 ${
+      className={`flex mb-10 scroll-mt-40 flex-col gap-10 ${
         isMobile ? "px-2 items-center" : "px-20"
       } h-max overflow-hidden`}
       ref={workRef}
     >
-      <div className="lg:text-7xl sm:text-6xl text-5xl flex items-center lg:flex-row flex-col lg:w-max w-full justify-center italic mb-6 tracking-widest text-white font-bold select-none">
+      <div className="lg:text-7xl sm:text-6xl text-5xl flex items-center lg:flex-row flex-col lg:w-max w-full justify-center italic tracking-widest text-white font-medium select-none">
         <div className="w-40 h-40">
           <Lottie animationData={Astronout} loop={true} />
         </div>
@@ -81,7 +81,7 @@ export default function Work() {
       </div>
 
       <div className="flex items-start flex-wrap lg:flex-nowrap w-full h-max gap-5">
-        <span className="text-white sm:text-3xl text-2xl">Filter:</span>
+        {/* <span className="text-white sm:text-3xl text-2xl">Filter:</span> */}
         <WorkFilter clickedTag={clickedTag} setClickedTag={setClickedTag} />
       </div>
 
