@@ -1,4 +1,4 @@
-import { FaReact, FaNode, FaFigma, FaGithub, FaHtml5, FaCss3Alt, FaGitAlt, FaBootstrap, FaDatabase } from 'react-icons/fa';
+import { FaReact, FaNode, FaNpm, FaFigma, FaGithub, FaHtml5, FaCss3Alt, FaGitAlt, FaBootstrap, FaDatabase } from 'react-icons/fa';
 import { SiTailwindcss, SiExpress, SiJavascript, SiMysql, SiFramer, SiThreedotjs, SiSass, SiNextdotjs, SiSqlite } from 'react-icons/si';
 import { VscVscode } from "react-icons/vsc";
 import { TbBrandFramerMotion } from "react-icons/tb";
@@ -21,8 +21,8 @@ export const frontend = [
 ];
 
 export const backend = [
-    { icon: FaNode, label: 'Node.js', color: '#339933' },
-    { icon: SiExpress, label: 'Express.js', color: '#000000' },
+    { icon: FaNode, label: 'node.js', color: '#339933' },
+    { icon: SiExpress, label: 'express.js', color: '#000000' },
     { icon: FaDatabase, label: 'SQL', color: '#003B57' },
     { icon: SiMysql, label: 'MySQL', color: '#4479A1' },
 ];
@@ -32,4 +32,5 @@ export const tools = [
     { icon: FaGithub, label: 'GitHub', color: '#181717' },
     { icon: VscVscode, label: 'VS Code', color: '#007ACC' },
     { icon: FaFigma, label: 'Figma', color: '#F24E1E' },
+    { icon: FaNpm, label: 'npm', color: '#F24E1E' },
 ];

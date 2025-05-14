@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 
 export default function WorkCard({ data, setOpenImages, clickedTag }) {
   const [showFullDescription, setShowFullDescription] = useState(false);
+  const [hover, setHover] = useState(false);
 
   // Use useCallback to memoize the function and prevent unnecessary re-creations
   const handleToggleDescription = useCallback(() => {
@@ -15,29 +16,33 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
     : `${data.description.slice(0, 280)}...`;
 
   return (
-    <div className=" text-white flex lg:flex-nowrap flex-wrap items-center justify-center gap-4 bg-gradient-to-r from-blue-200/10 via-sky-300/10 to-violet-500/10 backdrop-blur-md shadow-lg h-max border w-full border-white/20 rounded p-1">
+    <div className=" text-white flex lg:flex-nowrap flex-wrap items-start justify-center gap-4 ">
       {/* Image */}
       <div className="w-[500px]">
         <div
-          className="h-auto cursor-pointer select-none transition-all duration-300 ease-in-out transform hover:scale-105 hover:opacity-60 active:scale-95"
+          className={`h-auto cursor-pointer select-none border border-white/40 transition-all duration-300 ease-in-out transform ${
+            hover && "scale-105 opacity-65"
+          } active:scale-95 rounded-3xl`}
           onClick={setOpenImages}
           aria-label={`View ${data.name} images`}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
         >
-          <img className="rounded" src={data.img} alt={data.name} />
+          <img className="rounded-3xl" src={data.img} alt={data.name} />
         </div>
       </div>
 
       {/* Text Content */}
-      <div className="relative overflow-hidden w-full flex flex-col gap-6 justify-between p-3">
+      <div className="relative overflow-hidden w-full flex flex-col gap-6 justify-between p-3 bg-gradient-to-r from-blue-200/10 via-sky-300/10 to-violet-500/10 backdrop-blur-md shadow-lg h-max border border-white/20 rounded">
         {/* Header */}
-        <div className="text-3xl flex justify-between gap-4 flex-wrap  items-center">
+        <div className="text-2xl flex justify-between gap-4 flex-wrap  items-center">
           <span>{data.name}</span>
           <div className="flex gap-10">
             <a
               href={data.git}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl flex items-center gap-2 transition-all duration-200 ease-in-out hover:text-orange-400 transform hover:scale-105"
+              className="text-xl flex items-center gap-2 transition-all duration-200 ease-in-out hover:text-orange-400 transform hover:scale-105"
               aria-label={`View ${data.name} on Github`}
             >
               <BsGithub />
@@ -49,7 +54,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
                 href={data.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl flex items-center gap-2 transition-all duration-200 ease-in-out hover:text-orange-400 transform hover:scale-105"
+                className="text-xl flex items-center gap-2 transition-all duration-200 ease-in-out hover:text-orange-400 transform hover:scale-105"
                 aria-label={`View live version of ${data.name}`}
               >
                 <RiLiveLine />
@@ -61,7 +66,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
 
         {/* Description */}
         <div>
-          <p className="tracking-wider text-white leading-7">
+          <p className="tracking-wider text-white text-md leading-7">
             {renderDescription}
             <button
               onClick={handleToggleDescription}
@@ -77,7 +82,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
           {data.tags.map((tag) => (
             <div
               key={tag}
-              className={`bg-white/10 backdrop-blur-md shadow-lg border border-white/20 px-2 py-1 rounded-2xl select-none transition-transform duration-200 ${
+              className={`bg-white/10 backdrop-blur-md text-md shadow-lg border border-white/20 px-2 py-1 rounded-2xl select-none transition-transform duration-200 ${
                 clickedTag.includes(tag)
                   ? "bg-white/40 border-white/40 scale-110"
                   : ""

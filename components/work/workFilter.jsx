@@ -1,8 +1,11 @@
 import { Tags } from "@/assets/data/myWork";
-import { useState } from "react";
+import { ScrollContext } from "@/context/scrollContext";
+import { useContext, useState } from "react";
 
 export default function WorkFilter({ clickedTag, setClickedTag }) {
   const [more, setMore] = useState(false);
+
+  const { buttonRef } = useContext(ScrollContext);
 
   const handleClick = (tag) => {
     setClickedTag((prev) =>
@@ -13,7 +16,10 @@ export default function WorkFilter({ clickedTag, setClickedTag }) {
   const displayMore = more ? Tags : Tags.slice(0, 6);
 
   return (
-    <div className="flex gap-6 text-sm w-full text-white">
+    <div
+      ref={buttonRef}
+      className="flex gap-6 scroll-mt-30 text-sm w-full text-white"
+    >
       <div className="flex items-end gap-2 flex-wrap">
         {displayMore.map((tag, index) => {
           let opacityClass = "";
@@ -34,7 +40,7 @@ export default function WorkFilter({ clickedTag, setClickedTag }) {
           return (
             <button
               key={tag}
-              className={`cursor-pointer sm:text-lg text-md bg-white/10 backdrop-blur-md shadow-lg border border-white/20 p-2 px-4 rounded-3xl transition-all duration-200 ease-in-out hover:opacity-75 ${
+              className={`cursor-pointer text-md bg-white/10 backdrop-blur-md shadow-lg border border-white/20 p-2 px-4 rounded-3xl transition-all duration-200 ease-in-out hover:opacity-75 ${
                 clickedTag.includes(tag) ? "bg-white/40" : "bg-white/10"
               } ${opacityClass}`}
               onClick={() => handleClick(tag)}

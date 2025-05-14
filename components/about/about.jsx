@@ -13,12 +13,12 @@ export default function About() {
   return (
     <div
       ref={aboutRef}
-      className="flex scroll-mb-40 flex-col mb-0 mt-4 sm:px-20 px-2 w-full h-max"
+      className="flex scroll-mb-40 flex-col mb-0 sm:px-20 px-2 w-full h-max"
     >
-      <div className="flex w-full items-center sm:justify-end justify-center sm:flex-row flex-col-reverse h-max">
-        <span className="gradient-text text-transparent sm:text-5xl text-3xl font-medium select-none tracking-widest">
+      <div className="flex w-full items-center sm:justify-start mb-4 justify-center sm:flex-row flex-col-reverse h-max">
+        <span className="gradient-text text-transparent text-3xl font-medium select-none tracking-widest">
           {`< `}
-          <span className="sm:text-7xl text-5xl italic">About Me</span>
+          <span className="text-5xl italic">About Me</span>
           {` />`}
         </span>
         <div className="w-40 h-40">

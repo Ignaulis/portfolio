@@ -16,7 +16,7 @@ import { ScrollContext } from "@/context/scrollContext";
 
 export default function Work() {
   const { isMobile } = useContext(MobileContext);
-  const { workRef } = useContext(ScrollContext);
+  const { workRef, buttonRef } = useContext(ScrollContext);
   const [clickedTag, setClickedTag] = useState([]);
   const [openImages, setOpenImages] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -64,6 +64,7 @@ export default function Work() {
   const handlePageChange = (page) => {
     setDirection(page > currentPage ? 1 : -1);
     setCurrentPage(page);
+    buttonRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -73,11 +74,15 @@ export default function Work() {
       } h-max overflow-hidden`}
       ref={workRef}
     >
-      <div className="lg:text-7xl sm:text-6xl text-5xl flex items-center lg:flex-row flex-col lg:w-max w-full justify-center italic tracking-widest gradient-text text-transparent font-medium select-none">
+      <div className="flex items-center lg:flex-row flex-col lg:w-max w-full justify-center  select-none">
         <div className="w-40 h-40">
           <Lottie animationData={Astronout} loop={true} />
         </div>
-        <span>{`{...My Work}`}</span>
+        <div className="text-4xl italic tracking-widest gradient-text text-transparent font-medium">
+          {`{...`}
+          <span className="text-5xl">My Work</span>
+          {` }`}
+        </div>
       </div>
 
       <div className="flex items-start flex-wrap lg:flex-nowrap w-full h-max gap-5">
@@ -136,8 +141,8 @@ export default function Work() {
               onClick={() => handlePageChange(page)}
               className={`text-xl text-white px-4 py-2 rounded-lg border cursor-pointer ${
                 isActive
-                  ? "bg-white/40 border-white/70"
-                  : "border-white/70 hover:bg-white/90 hover:text-black"
+                  ? "bg-white/25 border-white/70"
+                  : "border-white/70 hover:bg-white/70 hover:text-black"
               }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}

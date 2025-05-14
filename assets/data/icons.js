@@ -17,7 +17,6 @@ import {
     SiThreedotjs,
     SiFramer
 } from 'react-icons/si';
-import { BsFiletypeScss } from 'react-icons/bs'
 import { GrMysql } from "react-icons/gr";
 
 
@@ -26,8 +25,7 @@ export const icons = [
 
     { "name": "HTML5", "icon": FaHtml5 },
     { "name": "CSS3", "icon": FaCss3Alt },
-    { "name": "Sass", "icon": FaSass },
-    { "name": "SCSS", "icon": BsFiletypeScss },
+    { "name": "SCSS", "icon": FaSass },
     { "name": "Tailwind CSS", "icon": SiTailwindcss },
     { "name": "Bootstrap", "icon": FaBootstrap },
     { "name": "JavaScript", "icon": FaJs },

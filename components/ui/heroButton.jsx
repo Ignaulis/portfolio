@@ -2,7 +2,7 @@ import { RiMailSendLine } from "react-icons/ri"; // Assuming you are using react
 
 const HeroButton = ({ onClick, href, children, Icon }) => {
   const baseClasses =
-    "uppercase text-white sm:text-2xl text-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 p-3 px-5 rounded-3xl cursor-pointer flex gap-2 items-center transition-colors duration-300";
+    "uppercase text-white text-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 p-3 px-5 rounded-3xl cursor-pointer flex gap-2 items-center transition-colors duration-300";
   const hoverClasses = "hover:bg-white/40";
   const activeClasses = "active:bg-white/20";
 
