@@ -4,6 +4,8 @@ import Aboutme from "./abouteme";
 import Skills from "./skills";
 import { useContext } from "react";
 import { ScrollContext } from "@/context/scrollContext";
+import Approaches from "./approaches";
+import Experience from "./experience";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -13,7 +15,7 @@ export default function About() {
   return (
     <div
       ref={aboutRef}
-      className="flex scroll-mb-40 flex-col mb-0 sm:px-20 px-2 w-full h-max"
+      className="flex scroll-mb-40 flex-col mb-40 sm:px-20 px-2 w-full h-max"
     >
       <div className="flex w-full items-center sm:justify-start mb-4 justify-center sm:flex-row flex-col-reverse h-max">
         <span className="gradient-text text-transparent text-3xl font-medium select-none tracking-widest">
@@ -27,6 +29,8 @@ export default function About() {
       </div>
       <Aboutme />
       <Skills />
+      <Approaches />
+      <Experience />
     </div>
   );
 }

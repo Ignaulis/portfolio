@@ -7,7 +7,7 @@ const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export default function Skills() {
   return (
-    <div className="flex w-full mt-10 mb-40 flex-col">
+    <div className="flex w-full mt-10 mb-10 flex-col">
       <div className="flex w-full sm:flex-row flex-col items-center">
         <div className="w-40 h-40">
           <Lottie animationData={skills} width={1} height={100} />

@@ -1,12 +1,14 @@
 import { BsGithub } from "react-icons/bs";
 import { RiLiveLine } from "react-icons/ri";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 export default function WorkCard({ data, setOpenImages, clickedTag }) {
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [hover, setHover] = useState(false);
+  const [imageIndex, setImageIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Use useCallback to memoize the function and prevent unnecessary re-creations
   const handleToggleDescription = useCallback(() => {
     setShowFullDescription((prev) => !prev);
   }, []);
@@ -15,28 +17,58 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
     ? data.description
     : `${data.description.slice(0, 280)}...`;
 
+  // Image changer with pause on hover
+  useEffect(() => {
+    if (!data.images || data.images.length <= 1 || isHovered) return;
+
+    const interval = setInterval(() => {
+      setFade(false);
+
+      setTimeout(() => {
+        setImageIndex((prev) => (prev + 1) % data.images.length);
+        setFade(true);
+      }, 500);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [data.images, isHovered]);
+
   return (
-    <div className=" text-white flex lg:flex-nowrap flex-wrap items-start justify-center gap-4 ">
+    <div className="text-white flex lg:flex-nowrap flex-wrap items-stretch justify-center gap-4">
       {/* Image */}
-      <div className="w-[500px]">
+      <div className="w-[300px]">
         <div
-          className={`h-auto cursor-pointer select-none border border-white/40 transition-all duration-300 ease-in-out transform ${
-            hover && "scale-105 opacity-65"
+          className={`relative w-[300px] h-full cursor-pointer select-none transition-all duration-300 ease-in-out transform ${
+            hover ? "scale-105 opacity-65" : ""
           } active:scale-95 rounded-3xl`}
           onClick={setOpenImages}
           aria-label={`View ${data.name} images`}
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
+          onMouseEnter={() => {
+            setHover(true);
+            setIsHovered(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+            setIsHovered(false);
+          }}
         >
-          <img className="rounded-3xl" src={data.img} alt={data.name} />
+          {data.images?.[imageIndex] && (
+            <img
+              className={`rounded-3xl w-full h-full object-cover transition-opacity duration-1000 ${
+                fade ? "opacity-100" : "opacity-0"
+              }`}
+              src={data.images[imageIndex]}
+              alt={data.name}
+            />
+          )}
         </div>
       </div>
 
       {/* Text Content */}
-      <div className="relative overflow-hidden w-full flex flex-col gap-6 justify-between p-3 bg-gradient-to-r from-blue-200/10 via-sky-300/10 to-violet-500/10 backdrop-blur-md shadow-lg h-max border border-white/20 rounded">
+      <div className="relative overflow-hidden w-full flex flex-col gap-6 justify-between p-3 bg-gradient-to-r from-blue-200/10 via-sky-300/10 to-violet-500/10 backdrop-blur-md shadow-lg border border-white/20 rounded">
         {/* Header */}
-        <div className="text-2xl flex justify-between gap-4 flex-wrap  items-center">
-          <span>{data.name}</span>
+        <div className="text-2xl flex justify-between gap-4 flex-wrap items-center">
+          <span className="text-white/90">{data.name}</span>
           <div className="flex gap-10">
             <a
               href={data.git}
@@ -66,7 +98,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
 
         {/* Description */}
         <div>
-          <p className="tracking-wider text-white text-md leading-7">
+          <p className="tracking-wider text-white/80 text-md leading-7">
             {renderDescription}
             <button
               onClick={handleToggleDescription}
