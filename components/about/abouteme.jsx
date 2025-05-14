@@ -22,7 +22,7 @@ export default function Aboutme() {
       {/* Teksto rašymo animacija */}
       <div
         ref={ref}
-        className="select-none flex items-start justify-center w-full text-xl text-white whitespace-pre-line leading-6.5"
+        className="select-none relative flex items-start justify-start w-full text-xl text-gray-300 whitespace-pre-line leading-6.5"
       >
         {inView && (
           <Typewriter
@@ -36,6 +36,9 @@ export default function Aboutme() {
           />
         )}
       </div>
+      <div
+        className={`absolute -z-10 bg-white/10 w-full h-full rounded-2xl top-5 -right-5 opacity-40`}
+      ></div>
     </div>
   );
 }

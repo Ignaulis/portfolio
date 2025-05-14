@@ -1,63 +1,35 @@
-import { FaReact, FaNode, FaHtml5, FaCss3Alt, FaGitAlt, FaBootstrap } from 'react-icons/fa';
-import { SiTailwindcss, SiMysql, SiFramer, SiThreeDotJs, SiSass } from 'react-icons/si';
+import { FaReact, FaNode, FaFigma, FaGithub, FaHtml5, FaCss3Alt, FaGitAlt, FaBootstrap, FaDatabase } from 'react-icons/fa';
+import { SiTailwindcss, SiExpress, SiJavascript, SiMysql, SiFramer, SiThreedotjs, SiSass, SiNextdotjs, SiSqlite } from 'react-icons/si';
+import { VscVscode } from "react-icons/vsc";
+import { TbBrandFramerMotion } from "react-icons/tb";
 
-// This is now an array of objects, each representing a skill
-const reactIcons = [
-    {
-        icon: <FaReact />,
-        color: '#61DAFB', // React color
-        skill: 'React'
-    },
-    {
-        icon: <FaNode />,
-        color: '#68A063', // Node.js color
-        skill: 'Node.js'
-    },
-    {
-        icon: <FaHtml5 />,
-        color: '#E34F26', // HTML5 color
-        skill: 'HTML5'
-    },
-    {
-        icon: <FaCss3Alt />,
-        color: '#1572B6', // CSS3 color
-        skill: 'CSS3'
-    },
-    {
-        icon: <SiSass />,
-        color: '#CC6699', // SCSS color
-        skill: 'SCSS'
-    },
-    {
-        icon: <FaGitAlt />,
-        color: '#F1502F', // Git color
-        skill: 'Git'
-    },
-    {
-        icon: <FaBootstrap />,
-        color: '#563D7C', // Bootstrap color
-        skill: 'Bootstrap'
-    },
-    {
-        icon: <SiTailwindcss />,
-        color: '#38BDF8', // Tailwind color
-        skill: 'Tailwind CSS'
-    },
-    {
-        icon: <SiMysql />,
-        color: '#4479A1', // MySQL color
-        skill: 'MySQL'
-    },
-    {
-        icon: <SiFramer />,
-        color: '#F24E1E', // Framer Motion color
-        skill: 'Framer Motion'
-    },
-    {
-        icon: <SiThreeDotJs />,
-        color: '#000000', // Three.js color
-        skill: 'Three.js'
-    }
+
+
+
+// Array of objects, each representing a skill with its icon component, label, and true logo color
+export const frontend = [
+    { icon: FaHtml5, label: 'HTML5', color: '#E34F26' },
+    { icon: FaCss3Alt, label: 'CSS3', color: '#1572B6' },
+    { icon: SiSass, label: 'SCSS', color: '#CC6699' },
+    { icon: FaBootstrap, label: 'Bootstrap', color: '#363D7C' },
+    { icon: SiTailwindcss, label: 'Tailwind CSS', color: '#38BDF8' },
+    { icon: TbBrandFramerMotion, label: 'Framer Motion', color: '#0055FF' },
+    { icon: SiJavascript, label: 'JavaScript', color: '#F7DF1E' },
+    { icon: FaReact, label: 'React', color: '#61DAFB' },
+    { icon: SiNextdotjs, label: 'Next.js', color: '#000000' },
+    { icon: SiThreedotjs, label: 'Three.js', color: '#000000' },
 ];
 
-export default reactIcons;
+export const backend = [
+    { icon: FaNode, label: 'Node.js', color: '#339933' },
+    { icon: SiExpress, label: 'Express.js', color: '#000000' },
+    { icon: FaDatabase, label: 'SQL', color: '#003B57' },
+    { icon: SiMysql, label: 'MySQL', color: '#4479A1' },
+];
+
+export const tools = [
+    { icon: FaGitAlt, label: 'Git', color: '#F05032' },
+    { icon: FaGithub, label: 'GitHub', color: '#181717' },
+    { icon: VscVscode, label: 'VS Code', color: '#007ACC' },
+    { icon: FaFigma, label: 'Figma', color: '#F24E1E' },
+];

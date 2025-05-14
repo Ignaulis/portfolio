@@ -15,7 +15,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
     : `${data.description.slice(0, 280)}...`;
 
   return (
-    <div className="text-white flex lg:flex-nowrap flex-wrap items-center justify-center gap-4 bg-gradient-to-r from-blue-200/10 via-sky-300/10 to-violet-500/10 backdrop-blur-md shadow-lg h-max border w-full border-white/20 rounded p-1">
+    <div className=" text-white flex lg:flex-nowrap flex-wrap items-center justify-center gap-4 bg-gradient-to-r from-blue-200/10 via-sky-300/10 to-violet-500/10 backdrop-blur-md shadow-lg h-max border w-full border-white/20 rounded p-1">
       {/* Image */}
       <div className="w-[500px]">
         <div
