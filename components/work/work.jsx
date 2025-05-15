@@ -139,7 +139,7 @@ export default function Work() {
             <motion.button
               key={page}
               onClick={() => handlePageChange(page)}
-              className={`text-xl text-white px-4 py-2 rounded-lg border cursor-pointer ${
+              className={`text-xl text-white px-3 py-1 rounded-lg border cursor-pointer ${
                 isActive
                   ? "bg-white/25 border-white/70"
                   : "border-white/70 hover:bg-white/70 hover:text-black"

@@ -59,3 +59,33 @@ export const expreience = [
         des: 'I specialize in building modern, interactive frontends with React, focusing on clean design and great UX. I’m passionate about creating immersive UIs using react-three-fiber (R3F) and Three.js. My main focus is on crafting responsive, high-performance interfaces with TailwindCSS and SCSS. While my experience extends to full stack development, including Node.js and MySQL, I’m constantly improving my skills in the latest frontend and 3D web technologies.'
     }
 ]
+
+
+export const education = [
+    {
+        name: 'Education',
+        ed: [
+            {
+                institution: 'Baltic Institute of Technology',
+                deg: 'Web Development Course',
+                duration: 'September 2024 - March 2025',
+                details: [
+                    'Completed an intensive 880-hour web development program.',
+                    'Focused on front-end technologies: HTML, CSS, JavaScript, and React for building dynamic user interfaces.',
+                    'Gained experience in back-end development using Node.js and Express.',
+                    'Learned to integrate MySQL databases and develop RESTful APIs.',
+                    'Understood the full-stack development lifecycle and web application deployment processes.',
+                ],
+            },
+            {
+                institution: 'Three.js Journey (Self-Study)',
+                deg: '3D Web Development with Three.js',
+                duration: 'March 2025 - April 2025',
+                details: [
+                    'Acquired skills in 3D web development using the Three.js library.',
+                    'Gained practical experience with React Three Fiber (R3F) and related libraries (Drei, postprocessing).',
+                ],
+            },
+        ]
+    }
+];

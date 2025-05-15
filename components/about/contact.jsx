@@ -33,7 +33,7 @@ export default function Contact() {
             target="_blank"
             onClick={onclick ? () => onclick(setShowForm) : undefined}
             rel="noopener noreferrer"
-            className="flex text-white cursor-pointer items-center gap-2 text-4xl tracking-wide custom-background p-3 rounded-2xl"
+            className="flex text-white cursor-pointer items-center gap-2 text-4xl tracking-wide custom-background p-3 rounded-2xl transition-all transform duration-400 hover:scale-110 active:scale-105"
           >
             <Icon />
           </a>

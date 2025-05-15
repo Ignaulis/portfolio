@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import skills from "../../assets/lottie/skills.json";
 import SkillCard from "./skillCard";
 import { frontend, backend, tools } from "@/assets/data/skills";
+import { motion } from "framer-motion";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -15,9 +16,9 @@ export default function Skills() {
         <span className="text-4xl text-white mb-6 select-none">My Toolbox</span>
       </div>
       <div className="w-full pl-8 flex-wrap lg:justify-between justify-center flex">
-        <SkillCard data={frontend} name={"Frontend"} />
-        <SkillCard data={backend} name={"Backend"} />
-        <SkillCard data={tools} name={"Tools"} />
+        <SkillCard motion={motion} data={frontend} name={"Frontend"} />
+        <SkillCard motion={motion} data={backend} name={"Backend"} />
+        <SkillCard motion={motion} data={tools} name={"Tools"} />
       </div>
     </div>
   );

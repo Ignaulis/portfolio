@@ -20,7 +20,7 @@ export default function WorkFilter({ clickedTag, setClickedTag }) {
       ref={buttonRef}
       className="flex gap-6 scroll-mt-30 text-sm w-full text-white"
     >
-      <div className="flex items-end gap-2 flex-wrap">
+      <div className="flex items-end sm:justify-start justify-center w-full gap-2 flex-wrap">
         {displayMore.map((tag, index) => {
           let opacityClass = "";
           if (!more) {
