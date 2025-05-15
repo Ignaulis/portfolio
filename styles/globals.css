@@ -46,11 +46,11 @@ body {
 
 /* half gradient */
 .custom-gradient-half {
-    @apply bg-gradient-to-r rounded-l-2xl from-white/10 via-white/0 to-transparent;
+    @apply bg-gradient-to-r rounded from-white/10 via-white/0 to-transparent;
 }
 
 .custom-gradient-half-whiter {
-    @apply bg-gradient-to-r rounded-l-2xl from-white/10 via-white/10 to-transparent;
+    @apply bg-gradient-to-r rounded from-white/10 via-white/10 to-transparent;
 }
 
 
@@ -72,9 +72,25 @@ body {
     @apply bg-gradient-to-l from-blue-200/10 via-sky-300/10 to-violet-500/10 border-white/20 border bg-white/10 backdrop-blur-2xl;
 }
 
+.custom-background-to-right {
+    @apply bg-gradient-to-r from-blue-200/10 via-sky-300/10 to-violet-500/10 border-white/20 border bg-white/10 backdrop-blur-2xl;
+}
+
 
 /* custom background */
 
 .custom-background {
     @apply bg-gradient-to-r from-blue-200/10 via-sky-500/10 to-violet-500/20 border-white/20 border backdrop-blur-2xl;
+}
+
+
+/* custom gradient to bottom */
+.custom-gradient-to-bottom {
+    @apply bg-gradient-to-b from-blue-200/10 via-sky-500/10 to-violet-500/20 border-white/20 border backdrop-blur-2xl;
+}
+
+
+/* work card */
+.work-card-custom {
+    @apply bg-gradient-to-r from-blue-200/10 via-sky-300/10 to-violet-500/10 backdrop-blur-md shadow-lg border border-white/20 rounded;
 }

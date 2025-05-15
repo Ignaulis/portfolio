@@ -8,7 +8,6 @@ import { motionLoadAnimate } from "@/assets/data/framerMotion";
 import About from "@/components/about/about";
 import Footer from "@/components/footer/footer";
 
-
 export default function Home() {
   return (
     <>

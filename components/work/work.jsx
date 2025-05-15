@@ -13,6 +13,7 @@ const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 // Duomenys
 import { MyWork } from "@/assets/data/myWork";
 import { ScrollContext } from "@/context/scrollContext";
+import InView from "../common/InView";
 
 export default function Work() {
   const { isMobile } = useContext(MobileContext);
@@ -74,20 +75,24 @@ export default function Work() {
       } h-max overflow-hidden`}
       ref={workRef}
     >
-      <div className="flex items-center lg:flex-row flex-col lg:w-max w-full justify-center  select-none">
-        <div className="w-40 h-40">
-          <Lottie animationData={Astronout} loop={true} />
+      <InView>
+        <div className="flex items-center lg:flex-row flex-col lg:w-max w-full justify-center  select-none">
+          <div className="w-40 h-40">
+            <Lottie animationData={Astronout} loop={true} />
+          </div>
+          <div className="text-4xl italic tracking-widest gradient-text text-transparent font-medium">
+            {`{...`}
+            <span className="text-5xl">My Work</span>
+            {` }`}
+          </div>
         </div>
-        <div className="text-4xl italic tracking-widest gradient-text text-transparent font-medium">
-          {`{...`}
-          <span className="text-5xl">My Work</span>
-          {` }`}
-        </div>
-      </div>
+      </InView>
 
-      <div className="flex items-start flex-wrap lg:flex-nowrap w-full h-max gap-5">
-        <WorkFilter clickedTag={clickedTag} setClickedTag={setClickedTag} />
-      </div>
+      <InView>
+        <div className="flex items-start flex-wrap lg:flex-nowrap w-full h-max gap-5">
+          <WorkFilter clickedTag={clickedTag} setClickedTag={setClickedTag} />
+        </div>
+      </InView>
 
       <div className="relative w-full min-h-[400px]">
         <motion.div
