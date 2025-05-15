@@ -18,7 +18,7 @@ export default function Aboutme() {
   });
 
   return (
-    <div className="sm:w-full w-11/12 flex mt-10 mb-10 flex-wrap justify-center gap-8 lg:flex-nowrap p-6 bg-white/10 backdrop-blur-2xl rounded border-white/20 border-1">
+    <div className="sm:w-full w-11/12 flex mt-10 mb-10 flex-wrap justify-center gap-8 lg:flex-nowrap p-6 custom-background-with-blur-border">
       {/* Avataras */}
       <div className="w-60 h-60 overflow-hidden bg-white/20 backdrop-blur-2xl border-white/20 border-2 rounded-4xl flex justify-end">
         <Image
@@ -43,7 +43,7 @@ export default function Aboutme() {
         )}
       </div>
 
-      <div className="absolute -z-10 bg-white/10 w-full h-full rounded-2xl top-5 -right-5 opacity-40"></div>
+      <div className="custom-background-background"></div>
     </div>
   );
 }

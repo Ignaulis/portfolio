@@ -1,4 +1,4 @@
-import { RiMailSendLine } from "react-icons/ri"; // Assuming you are using react-icons
+import { RiMailSendLine } from "react-icons/ri";
 
 const HeroButton = ({ onClick, href, children, Icon }) => {
   const baseClasses =

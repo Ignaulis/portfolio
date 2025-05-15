@@ -42,3 +42,39 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
 }
+
+
+/* half gradient */
+.custom-gradient-half {
+    @apply bg-gradient-to-r rounded-l-2xl from-white/10 via-white/0 to-transparent;
+}
+
+.custom-gradient-half-whiter {
+    @apply bg-gradient-to-r rounded-l-2xl from-white/10 via-white/10 to-transparent;
+}
+
+
+/* background with blur and border */
+.custom-background-with-blur-border {
+    @apply bg-white/10 backdrop-blur-2xl rounded border-white/20 border-1;
+}
+
+.custom-background-background {
+    @apply absolute -z-10 bg-white/10 w-full h-full rounded-2xl top-5 -right-5 opacity-40;
+}
+
+
+
+
+/* gradeint background to left */
+
+.custom-background-to-left {
+    @apply bg-gradient-to-l from-blue-200/10 via-sky-300/10 to-violet-500/10 border-white/20 border bg-white/10 backdrop-blur-2xl;
+}
+
+
+/* custom background */
+
+.custom-background {
+    @apply bg-gradient-to-r from-blue-200/10 via-sky-500/10 to-violet-500/20 border-white/20 border backdrop-blur-2xl;
+}

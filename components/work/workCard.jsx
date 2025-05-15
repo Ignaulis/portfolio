@@ -68,7 +68,9 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
       <div className="relative overflow-hidden w-full flex flex-col gap-6 justify-between p-3 bg-gradient-to-r from-blue-200/10 via-sky-300/10 to-violet-500/10 backdrop-blur-md shadow-lg border border-white/20 rounded">
         {/* Header */}
         <div className="text-2xl flex justify-between gap-4 flex-wrap items-center">
-          <span className="text-white/90">{data.name}</span>
+          <span className="text-white/90 custom-gradient-half-whiter p-2">
+            {data.name}
+          </span>
           <div className="flex gap-10">
             <a
               href={data.git}

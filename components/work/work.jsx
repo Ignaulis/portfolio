@@ -2,7 +2,7 @@ import { useContext, useMemo, useState, useCallback } from "react";
 import dynamic from "next/dynamic";
 import { MobileContext } from "@/context/mobileContext";
 import { motion } from "framer-motion"; // gali būti lazy-load’inamas, jei dar nori labiau optimizuot
-import Astronout from "../../assets/lottie/astronaut-with-space-shuttle.json";
+import Astronout from "../../assets/lottie/footer.json";
 
 // ⚠️ Dynamic (lazy) importai
 const WorkFilter = dynamic(() => import("./workFilter"));
