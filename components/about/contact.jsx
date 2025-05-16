@@ -12,7 +12,7 @@ export default function Contact() {
   const { setShowForm } = useContext(MobileContext);
 
   return (
-    <div className="flex flex-col items-center gap-8">
+    <div className="flex flex-col items-center gap-6">
       <div className="flex items-center gap-4">
         <div className="flex flex-wrap-reverse justify-center items-center">
           <div className=" text-white text-sm sm:text-xl gap-2 rounded-xl flex select-none flex-col custom-background-to-left px-4 pt-2">
@@ -33,7 +33,7 @@ export default function Contact() {
             target="_blank"
             onClick={onclick ? () => onclick(setShowForm) : undefined}
             rel="noopener noreferrer"
-            className="flex text-white cursor-pointer items-center gap-2 text-2xl sm:text-4xl tracking-wide custom-background p-3 rounded-2xl transition-all transform duration-400 hover:scale-110 active:scale-105"
+            className="flex text-white cursor-pointer items-center gap-2 text-xl sm:text-2xl tracking-wide custom-background p-3 rounded-2xl transition-all transform duration-400 hover:scale-120 active:scale-110"
           >
             <Icon />
           </a>

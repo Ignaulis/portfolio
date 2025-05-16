@@ -16,7 +16,7 @@ export default function About() {
   return (
     <div
       ref={aboutRef}
-      className="flex scroll-mb-40 flex-col mb-30 sm:px-20 px-2 w-full h-max"
+      className="flex scroll-mb-40 flex-col mb-14 sm:px-20 px-2 w-full h-max"
     >
       <InView>
         <div className="flex w-full items-center sm:justify-start mb-4 justify-center sm:flex-row flex-col-reverse h-max">

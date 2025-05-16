@@ -20,10 +20,10 @@ export default function Hero() {
         <span>developer</span>
       </div>
 
-      <div className="text-white tracking-wider text-start flex justify-center text-xl w-full">
-        <span className="sm:w-2/3 w-full px-4 sm:px-0 lg:w-full text-center lg:text-start">
-          I like to craft solid and scalable frontend products with great user
-          experiences.
+      <div className="text-white tracking-wider text-start flex justify-center text-xl w-4/5">
+        <span className="w-full px-4 sm:px-0 lg:w-full text-center lg:text-start">
+          I build clean, responsive, and detail-focused frontends — turning
+          ideas into sharp, scalable experiences.
         </span>
       </div>
 

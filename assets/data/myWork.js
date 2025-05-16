@@ -2,6 +2,23 @@
 
 // my works
 export const MyWork = [
+    //Portfolio
+    {
+        images: [
+            '/photos/portfolio/porf.png',
+            '/photos/portfolio/porf2.png',
+            '/photos/portfolio/porf3.png',
+            '/photos/portfolio/porf4.png',
+            '/photos/portfolio/porf5.png',
+        ],
+        name: 'Portfolio',
+        description: `An interactive and modern portfolio website where I showcase my work and introduce myself through a visually engaging and animated interface. The project features integrated 3D models and is fully responsive, built with modern web technologies to highlight both technical skills and creativity.`,
+        tags: [
+            'Html', 'Css', 'Tailwind', 'Framer Motion', 'Javascript', 'React', 'ThreeJs', 'R3F', 'NextJs'
+        ],
+        git: 'https://github.com/Ignaulis/portfolio'
+    },
+
     //apple store
     {
         img: '/photos/3d_apple_store/apple.png',

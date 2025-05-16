@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export default function InView({ children, className }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1,
   });
 

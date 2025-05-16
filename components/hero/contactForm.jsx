@@ -53,7 +53,7 @@ export default function ContactForm() {
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.4 }}
       >
-        <h2 className="text-2xl font-bold mb-4 text-center">Contact Me</h2>
+        <h2 className="text-2xl select-none mb-4 text-center">Contact Me</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium">Name</label>
@@ -106,13 +106,13 @@ export default function ContactForm() {
             <motion.button
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="bg-green-700 text-white text-xl font-medium px-4 py-2 rounded-lg hover:opacity-85 transition cursor-pointer"
+              className="bg-green-700 text-white text-xl px-4 py-2 rounded-lg hover:opacity-85 transition cursor-pointer"
             >
               Send
             </motion.button>
             <motion.button
               whileTap={{ scale: 0.95 }}
-              className="bg-red-500 text-white text-xl font-medium px-4 py-2 rounded-lg hover:opacity-85 transition cursor-pointer"
+              className="bg-red-500 text-white text-xl px-4 py-2 rounded-lg hover:opacity-85 transition cursor-pointer"
               onClick={() => setShowForm(false)}
             >
               Close
