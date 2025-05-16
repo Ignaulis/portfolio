@@ -1,40 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Portfolio – Interactive 3D & Modern Web Experience
 
-## Getting Started
+An interactive and modern portfolio website where I showcase my work and introduce myself through a visually engaging and animated interface. The project features integrated 3D models and is fully responsive, built with modern web technologies to highlight both technical skills and creativity.
 
-First, run the development server:
+## [Check out!](https://ignaulis.github.io/3d_apple_store/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Tech Stack
+
+- **Next.js** – React framework for server-side rendering and static site generation  
+- **React** – UI library  
+- **Three.js** – 3D graphics engine  
+- **React Three Fiber (R3F)** – React renderer for Three.js  
+- **TailwindCSS** – Utility-first CSS framework for styling  
+- **Framer Motion** – Animation library for React  
+- **Lottie React** – For rendering Lottie animations  
+- **React Icons** – Icon library  
+- **React Intersection Observer** – For observing elements in viewport  
+- **React Simple Typewriter** – Typewriter effect component  
+
+---
+
+## 💡 Features
+
+- 🧠 **Immersive 3D Models**: Seamlessly integrated interactive 3D product models using React Three Fiber and Three.js  
+- 🔁 **Landing Page**: Rotating 3D Apple Vision Pro and a slider showcasing the latest products  
+- 🌐 **Responsive Navigation Bar**: Links to iPhone, Mac, Vision, Contacts, Search, and Cart  
+- 🧭 **Product Exploration**:  
+  - View all products as image cards  
+  - Navigate to detailed product pages featuring 3D models  
+  - Add products to cart from any page  
+- 🔍 **Search Functionality**: Instant filtering of products by name  
+- 🛒 **Cart & Checkout Simulation**:  
+  - Add products to your cart  
+  - Simulate a purchase with user information input  
+- 📱 **Fully Responsive Design**: Mobile, tablet, and desktop friendly, styled with TailwindCSS  
+- 🚀 **Built with Modern Tech**: React, React Three Fiber, Drei, TailwindCSS, Vite, and React Router DOM  
+
+---
+
+## 📦 Dependencies
+
+```json
+{
+  "@react-three/drei": "^10.0.6",
+  "@react-three/fiber": "^9.1.2",
+  "@tailwindcss/vite": "^4.1.4",
+  "react": "^19.0.0",
+  "react-dom": "^19.0.0",
+  "react-router-dom": "^7.5.1",
+  "tailwindcss": "^4.1.4",
+  "three": "^0.175.0",
+  "vite-plugin-svgr": "^4.3.0"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📸 Screenshots
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+![App Preview1](public/photos/portfolio/porf.png)
+![App Preview1](public/photos/portfolio/porf2.png)
+![App Preview1](public/photos/portfolio/porf3.png)
+![App Preview1](public/photos/portfolio/porf4.png)
+![App Preview1](public/photos/portfolio/porf5.png)
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+---
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## 🛠️ Installation & Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/yourusername/3d-apple-store.git
+   ```
 
-## Learn More
+2. **Install dependencies**  
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Start the development server**  
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📝 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+This project is open source and available under the [MIT License](LICENSE).
