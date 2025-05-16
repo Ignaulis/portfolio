@@ -1,5 +1,8 @@
 import dynamic from "next/dynamic";
-const HeroScene = dynamic(() => import("@/three/heroScene/heroScene"), { ssr: false });
+const HeroScene = dynamic(() => import("@/three/heroScene/heroScene"), {
+  ssr: false,
+  loading: () => <Loader />
+});
 
 import ContactForm from "@/components/hero/contactForm";
 import Hero from "@/components/hero/hero";
@@ -9,6 +12,7 @@ import { motion } from "framer-motion";
 import { motionLoadAnimate } from "@/assets/data/framerMotion";
 import About from "@/components/about/about";
 import Footer from "@/components/footer/footer";
+import Loader from "@/components/ui/loader";
 
 
 export default function Home() {
