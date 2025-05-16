@@ -82,7 +82,10 @@ export default function Accordion({ data, work, ed, dataO }) {
             <div className="flex flex-col text-xl gap-4 text-white/90">
               <div className="flex flex-col custom-gradient-half p-2">
                 <span className="text-sm sm:text-xl">{data.oc}</span>
-                <span className="text-sm">{data.time}</span>
+                <div className="flex gap-10 items-center">
+                  <span className="text-sm sm:text-lg">{data.pos}</span>
+                  <span className="text-sm">{data.time}</span>
+                </div>
               </div>
 
               <span className="tracking-wider text-sm sm:text-lg">

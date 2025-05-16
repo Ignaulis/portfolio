@@ -54,7 +54,8 @@ export const approaches = [{
 export const expreience = [
     {
         name: 'Experience',
-        oc: 'Freelance Web Developer',
+        oc: 'Web Developer',
+        pos: 'Freelance ',
         time: 'January 2025 - Present',
         des: 'I specialize in building modern, interactive frontends with React, focusing on clean design and great UX. I’m passionate about creating immersive UIs using react-three-fiber (R3F) and Three.js. My main focus is on crafting responsive, high-performance interfaces with TailwindCSS and SCSS. While my experience extends to full stack development, including Node.js and MySQL, I’m constantly improving my skills in the latest frontend and 3D web technologies.'
     }

@@ -13,11 +13,15 @@ import { motionLoadAnimate } from "@/assets/data/framerMotion";
 import About from "@/components/about/about";
 import Footer from "@/components/footer/footer";
 import Loader from "@/components/ui/loader";
+import Head from "next/head";
 
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Ignas Naulis</title>
+      </Head>
 
       {/* hero */}
       <motion.div
