@@ -67,7 +67,7 @@ An interactive and modern portfolio website where I showcase my work and introdu
 
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/yourusername/3d-apple-store.git
+   git clone https://github.com/Ignaulis/portfolio.git
    ```
 
 2. **Install dependencies**  
