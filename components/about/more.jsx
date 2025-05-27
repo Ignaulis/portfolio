@@ -1,7 +1,7 @@
 import { approaches, expreience, education } from "@/assets/data/skills";
 import Accordion from "./accordion";
 import { useState } from "react";
-import CertificateModal from "./CertificateModal";
+import CertificateModal from "./certificatemodal";
 
 export default function More() {
   const [certificateImage, setCertificateImage] = useState(null);
