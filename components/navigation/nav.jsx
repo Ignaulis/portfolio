@@ -67,10 +67,10 @@ export default function Nav() {
       initial={motionLoadAnimate.initial}
       animate={motionLoadAnimate.animate}
       transition={motionLoadAnimate.transition}
-      className="fixed top-3 left-3 right-3 py-4.5 rounded-2xl z-50 bg-white/10 backdrop-blur-md shadow-lg border border-white/20"
+      className="fixed top-3 right-3 left-3 z-50 rounded-2xl border border-white/20 bg-white/10 py-4.5 shadow-lg backdrop-blur-md"
     >
       {/* Section containing the navigation items */}
-      <section className="w-full flex flex-wrap justify-center gap-x-10 gap-y-3 items-center">
+      <section className="flex w-full flex-wrap items-center justify-center gap-x-10 gap-y-3">
         {/* Render mobile menu button or desktop navigation buttons */}
         {isMobile ? (
           <MenuButton isOpen={isOpen} onClick={handleIsOpen} />
@@ -91,7 +91,7 @@ export default function Nav() {
         {/* Mobile menu dropdown */}
         {isMobile && (
           <div
-            className={`w-full overflow-hidden flex items-center gap-2 flex-col transition-all duration-500 ease-in-out ${
+            className={`flex w-full flex-col items-center gap-2 overflow-hidden transition-all duration-500 ease-in-out ${
               isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
             }`}
           >
@@ -111,13 +111,11 @@ export default function Nav() {
 
       {/* Animated contacts dropdown */}
       <div
-        className={`w-full overflow-hidden transition-all duration-500 ease-in-out transform
-    ${
-      showContacts
-        ? "max-h-96 opacity-100 translate-y-0"
-        : "max-h-0 opacity-0 -translate-y-6"
-    }
-  `}
+        className={`w-full transform overflow-hidden transition-all duration-500 ease-in-out ${
+          showContacts
+            ? "max-h-96 translate-y-0 opacity-100"
+            : "max-h-0 -translate-y-6 opacity-0"
+        } `}
       >
         {showContacts && <NavContactsDrop />}
       </div>

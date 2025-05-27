@@ -9,7 +9,7 @@ export default function Aboutme() {
 
   const [text] = useTypewriter({
     words: [
-      `Hey!\n\nI'm Ignas Naulis, a front-end developer from Lithuania. I love creating clean, responsive, and visually sharp websites. Turning ideas into real, working products is what keeps me going.\n\nI'm all about pixel-perfect results — every little detail matters to me. While most of my experience is in front-end, I’ve also played around with some back-end and 3D web projects too.\n\nAlways learning, always building.`,
+      `Hey!\n\nI'm Ignas Naulis, a web developer from Lithuania. I love creating clean, responsive, and visually sharp websites. Turning ideas into real, working products is what keeps me going.\n\nI'm all about pixel-perfect results — every little detail matters to me. While most of my experience is in front-end development, I’ve also explored some back-end and 3D web projects.\n\nAlways learning, always building.`,
     ],
     loop: 1,
     typeSpeed: 30,
@@ -18,9 +18,9 @@ export default function Aboutme() {
   });
 
   return (
-    <div className="sm:w-full w-11/12 flex mt-10 mb-10 flex-wrap justify-center gap-8 lg:flex-nowrap p-6 custom-background-with-blur-border">
+    <div className="custom-background-with-blur-border mt-10 mb-10 flex w-11/12 flex-wrap justify-center gap-8 p-6 sm:w-full lg:flex-nowrap">
       {/* Avataras */}
-      <div className="w-60 h-60 overflow-hidden bg-white/20 backdrop-blur-2xl border-white/20 border-2 rounded-4xl flex justify-end">
+      <div className="flex h-60 w-60 justify-end overflow-hidden rounded-4xl border-2 border-white/20 bg-white/20 backdrop-blur-2xl">
         <Image
           src="/avatar.png"
           width={300}
@@ -33,7 +33,7 @@ export default function Aboutme() {
       {/* Teksto rašymo animacija */}
       <div
         ref={ref}
-        className="select-none relative flex items-start justify-start w-full text-lg text-gray-300 whitespace-pre-line leading-6.5"
+        className="relative flex w-full items-start justify-start text-lg leading-6.5 whitespace-pre-line text-gray-300 select-none"
       >
         {inView && (
           <span>

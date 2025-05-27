@@ -1,8 +1,8 @@
 import { RiMailSendLine } from "react-icons/ri";
 
-const HeroButton = ({ onClick, href, children, Icon }) => {
+const HeroButton = ({ onClick, href, children, Icon, download }) => {
   const baseClasses =
-    "uppercase text-white text-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 p-3 px-5 rounded-3xl cursor-pointer flex gap-2 items-center transition-colors duration-300";
+    "uppercase text-white sm:text-xl text-sm bg-white/10 backdrop-blur-md shadow-lg border border-white/20 p-3 px-5 rounded-3xl cursor-pointer flex gap-2 items-center transition-colors duration-300";
   const hoverClasses = "hover:bg-white/40";
   const activeClasses = "active:bg-white/20";
 
@@ -17,8 +17,11 @@ const HeroButton = ({ onClick, href, children, Icon }) => {
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        download={download ? true : undefined}
+        {...(!download && {
+          target: "_blank",
+          rel: "noopener noreferrer",
+        })}
         className={combinedClasses}
       >
         {children} {Icon && <Icon />}

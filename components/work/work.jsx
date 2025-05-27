@@ -19,15 +19,15 @@ export default function Work() {
   const { isMobile } = useContext(MobileContext);
   const { workRef, buttonRef } = useContext(ScrollContext);
   const [clickedTag, setClickedTag] = useState([]);
-  const [openImages, setOpenImages] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [direction, setDirection] = useState(0);
+  const [openImages, setOpenImages] = useState(null);
   const itemsPerPage = 3;
 
   const filteredWork = useMemo(() => {
     if (clickedTag.length === 0) return MyWork;
     return MyWork.filter((work) =>
-      clickedTag.every((tag) => work.tags.includes(tag))
+      clickedTag.every((tag) => work.tags.includes(tag)),
     );
   }, [clickedTag]);
 
@@ -36,7 +36,7 @@ export default function Work() {
   const paginatedContent = useMemo(() => {
     return filteredWork.slice(
       (currentPage - 1) * itemsPerPage,
-      currentPage * itemsPerPage
+      currentPage * itemsPerPage,
     );
   }, [filteredWork, currentPage]);
 
@@ -70,17 +70,17 @@ export default function Work() {
 
   return (
     <div
-      className={`flex mb-10 scroll-mt-40 flex-col gap-10 ${
-        isMobile ? "px-2 items-center" : "px-20"
+      className={`mb-10 flex scroll-mt-40 flex-col gap-10 ${
+        isMobile ? "items-center px-2" : "px-20"
       } h-max overflow-hidden`}
       ref={workRef}
     >
       <InView>
-        <div className="flex items-center lg:flex-row flex-col lg:w-max w-full justify-center  select-none">
-          <div className="w-40 h-40">
+        <div className="flex w-full flex-col items-center justify-center select-none lg:w-max lg:flex-row">
+          <div className="h-40 w-40">
             <Lottie animationData={Astronout} loop={true} />
           </div>
-          <div className="text-4xl italic tracking-widest gradient-text text-transparent font-medium">
+          <div className="gradient-text text-4xl font-medium tracking-widest text-transparent italic">
             {`{...`}
             <span className="text-5xl">My Work</span>
             {` }`}
@@ -89,12 +89,12 @@ export default function Work() {
       </InView>
 
       <InView>
-        <div className="flex items-start flex-wrap lg:flex-nowrap w-full h-max gap-5">
+        <div className="flex h-max w-full flex-wrap items-start gap-5 lg:flex-nowrap">
           <WorkFilter clickedTag={clickedTag} setClickedTag={setClickedTag} />
         </div>
       </InView>
 
-      <div className="relative w-full min-h-[400px]">
+      <div className="relative min-h-[400px] w-full">
         <motion.div
           key={currentPage}
           custom={direction}
@@ -103,10 +103,10 @@ export default function Work() {
           animate="center"
           exit="exit"
           transition={{ duration: 0.5 }}
-          className="flex flex-col gap-8 w-full"
+          className="flex w-full flex-col gap-8"
         >
           {paginatedContent.length === 0 ? (
-            <div className="text-center text-white text-3xl mt-20 select-none italic opacity-70">
+            <div className="mt-20 text-center text-3xl text-white italic opacity-70 select-none">
               No work found with selected tags.
             </div>
           ) : (
@@ -134,7 +134,7 @@ export default function Work() {
       <motion.div
         layout
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="self-center flex pb-3 gap-4 mt-5"
+        className="mt-5 flex gap-4 self-center pb-3"
       >
         {Array.from({ length: totalPages }, (_, i) => {
           const page = i + 1;
@@ -144,9 +144,9 @@ export default function Work() {
             <motion.button
               key={page}
               onClick={() => handlePageChange(page)}
-              className={`text-xl text-white px-3 py-1 rounded-lg border cursor-pointer ${
+              className={`cursor-pointer rounded-lg border px-3 py-1 text-xl text-white ${
                 isActive
-                  ? "bg-white/25 border-white/70"
+                  ? "border-white/70 bg-white/25"
                   : "border-white/70 hover:bg-white/70 hover:text-black"
               }`}
               whileHover={{ scale: 1.1 }}

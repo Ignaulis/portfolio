@@ -25,13 +25,13 @@ export default function WorkImages({ openImages, setOpenImages, images }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center backdrop-blur-md bg-black/50"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-md"
         >
           {/* Close button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             onClick={handleClose}
-            className="absolute top-4 right-4 text-white bg-black/40 p-2 rounded-full hover:bg-black/70 cursor-pointer"
+            className="absolute top-4 right-4 cursor-pointer rounded-full bg-black/40 p-2 text-white hover:bg-black/70"
           >
             <FaTimes size={20} />
           </motion.button>
@@ -40,7 +40,7 @@ export default function WorkImages({ openImages, setOpenImages, images }) {
           <motion.button
             whileHover={{ scale: 1.05 }}
             onClick={handlePrev}
-            className="absolute left-4 sm:left-10 text-white bg-black/40 p-2 rounded-full hover:bg-black/70 cursor-pointer"
+            className="absolute left-4 cursor-pointer rounded-full bg-black/40 p-2 text-white hover:bg-black/70 sm:left-10"
           >
             <FaChevronLeft size={28} />
           </motion.button>
@@ -52,12 +52,12 @@ export default function WorkImages({ openImages, setOpenImages, images }) {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -100, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full px-3 sm:w-2/3 sm:px-0 h-auto max-w-[90%] max-h-[80%] rounded-xl overflow-hidden shadow-lg"
+            className="h-auto max-h-[80%] w-full max-w-[90%] overflow-hidden rounded-xl px-3 shadow-lg sm:w-2/3 sm:px-0"
           >
             <img
               src={images[current]}
               alt={`Slide ${current}`}
-              className="w-full h-full object-contain"
+              className="h-full w-full object-contain"
             />
           </motion.div>
 
@@ -65,7 +65,7 @@ export default function WorkImages({ openImages, setOpenImages, images }) {
           <motion.button
             whileHover={{ scale: 1.05 }}
             onClick={handleNext}
-            className="absolute right-4 sm:right-10 text-white bg-black/40 p-2 rounded-full hover:bg-black/70 cursor-pointer"
+            className="absolute right-4 cursor-pointer rounded-full bg-black/40 p-2 text-white hover:bg-black/70 sm:right-10"
           >
             <FaChevronRight size={28} />
           </motion.button>

@@ -45,15 +45,15 @@ export default function ContactForm() {
   if (!hasMounted || !showForm) return null;
 
   return (
-    <div className="fixed inset-0 z-100 flex justify-center items-center">
+    <div className="fixed inset-0 z-100 flex items-center justify-center">
       <motion.div
-        className="w-[310px] mx-auto p-6 bg-white/10 backdrop-blur-md shadow-lg border border-white/20 rounded-2xl text-white"
+        className="mx-auto w-[310px] rounded-2xl border border-white/20 bg-white/10 p-6 text-white shadow-lg backdrop-blur-md"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.4 }}
       >
-        <h2 className="text-2xl select-none mb-4 text-center">Contact Me</h2>
+        <h2 className="mb-4 text-center text-2xl select-none">Contact Me</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium">Name</label>
@@ -68,7 +68,7 @@ export default function ContactForm() {
                 })
               }
               required
-              className="w-full border outline-0 border-gray-300 rounded-lg p-2 mt-1"
+              className="mt-1 w-full rounded-lg border border-gray-300 p-2 outline-0"
             />
           </div>
           <div>
@@ -84,7 +84,7 @@ export default function ContactForm() {
                 })
               }
               required
-              className="w-full border outline-0 border-gray-300 rounded-lg p-2 mt-1"
+              className="mt-1 w-full rounded-lg border border-gray-300 p-2 outline-0"
             />
           </div>
           <div>
@@ -99,20 +99,20 @@ export default function ContactForm() {
                 })
               }
               required
-              className="w-full border outline-0 border-gray-300 rounded-lg p-2 mt-1 h-32"
+              className="mt-1 h-32 w-full rounded-lg border border-gray-300 p-2 outline-0"
             />
           </div>
           <div className="flex justify-between">
             <motion.button
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="bg-green-700 text-white text-xl px-4 py-2 rounded-lg hover:opacity-85 transition cursor-pointer"
+              className="cursor-pointer rounded-lg bg-green-700 px-4 py-2 text-xl text-white transition hover:opacity-85"
             >
               Send
             </motion.button>
             <motion.button
               whileTap={{ scale: 0.95 }}
-              className="bg-red-500 text-white text-xl px-4 py-2 rounded-lg hover:opacity-85 transition cursor-pointer"
+              className="cursor-pointer rounded-lg bg-red-500 px-4 py-2 text-xl text-white transition hover:opacity-85"
               onClick={() => setShowForm(false)}
             >
               Close
@@ -122,7 +122,7 @@ export default function ContactForm() {
           <AnimatePresence>
             {status === "success" && (
               <motion.p
-                className="text-green-600 mt-2"
+                className="mt-2 text-green-600"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -132,7 +132,7 @@ export default function ContactForm() {
             )}
             {status === "error" && (
               <motion.p
-                className="text-red-400 mt-2"
+                className="mt-2 text-red-400"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}

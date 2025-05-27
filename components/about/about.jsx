@@ -16,16 +16,16 @@ export default function About() {
   return (
     <div
       ref={aboutRef}
-      className="flex scroll-mb-40 flex-col mb-14 sm:px-20 px-2 w-full h-max"
+      className="mb-14 flex h-max w-full scroll-mb-40 flex-col px-2 sm:px-20"
     >
       <InView>
-        <div className="flex w-full items-center sm:justify-start mb-4 justify-center sm:flex-row flex-col-reverse h-max">
-          <span className="gradient-text text-transparent text-3xl font-medium select-none tracking-widest">
+        <div className="mb-4 flex h-max w-full flex-col-reverse items-center justify-center sm:flex-row sm:justify-start">
+          <span className="gradient-text text-3xl font-medium tracking-widest text-transparent select-none">
             {`< `}
             <span className="text-5xl italic">About Me</span>
             {` />`}
           </span>
-          <div className="w-40 h-40">
+          <div className="h-40 w-40">
             <Lottie animationData={astro} loop={true} />
           </div>
         </div>

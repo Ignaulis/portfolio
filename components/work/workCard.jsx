@@ -36,13 +36,13 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
 
   return (
     <InView>
-      <div className="text-white flex lg:flex-nowrap flex-wrap items-stretch justify-center gap-4">
+      <div className="flex flex-wrap items-stretch justify-center gap-4 text-white lg:flex-nowrap">
         {/* Image */}
         <div className="w-[300px]">
           <div
-            className={`relative w-[300px] sm:h-full h-[200px] cursor-pointer select-none transition-all duration-300 ease-in-out transform ${
+            className={`relative h-[200px] w-[300px] transform cursor-pointer transition-all duration-300 ease-in-out select-none sm:h-full ${
               hover ? "scale-105 opacity-65" : ""
-            } active:scale-95 rounded-3xl`}
+            } rounded-3xl active:scale-95`}
             onClick={setOpenImages}
             aria-label={`View ${data.name} images`}
             onMouseEnter={() => {
@@ -56,7 +56,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
           >
             {data.images?.[imageIndex] && (
               <img
-                className={`rounded-3xl w-full h-full object-cover transition-opacity duration-1000 ${
+                className={`h-full w-full rounded-3xl object-cover transition-opacity duration-1000 ${
                   fade ? "opacity-100" : "opacity-0"
                 }`}
                 src={data.images[imageIndex]}
@@ -67,10 +67,10 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
         </div>
 
         {/* Text Content */}
-        <div className="relative overflow-hidden w-full flex flex-col gap-6 justify-between p-3 work-card-custom">
+        <div className="work-card-custom relative flex w-full flex-col justify-between gap-6 overflow-hidden p-3">
           {/* Header */}
-          <div className="text-2xl flex justify-between gap-4 flex-wrap items-center">
-            <span className="text-white/90 custom-gradient-half-whiter p-2">
+          <div className="flex flex-wrap items-center justify-between gap-4 text-2xl">
+            <span className="custom-gradient-half-whiter p-2 text-white/90">
               {data.name}
             </span>
             <div className="flex gap-10">
@@ -78,7 +78,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
                 href={data.git}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl flex items-center gap-2 transition-all duration-200 ease-in-out hover:text-orange-400 transform hover:scale-105"
+                className="flex transform items-center gap-2 text-xl transition-all duration-200 ease-in-out hover:scale-105 hover:text-orange-400"
                 aria-label={`View ${data.name} on Github`}
               >
                 <BsGithub />
@@ -90,7 +90,7 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
                   href={data.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xl flex items-center gap-2 transition-all duration-200 ease-in-out hover:text-orange-400 transform hover:scale-105"
+                  className="flex transform items-center gap-2 text-xl transition-all duration-200 ease-in-out hover:scale-105 hover:text-orange-400"
                   aria-label={`View live version of ${data.name}`}
                 >
                   <RiLiveLine />
@@ -102,11 +102,11 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
 
           {/* Description */}
           <div>
-            <p className="tracking-wider text-white/80 text-md leading-7">
+            <p className="text-md leading-7 tracking-wider text-white/80">
               {renderDescription}
               <button
                 onClick={handleToggleDescription}
-                className="ml-4 text-white/70 hover:text-white cursor-pointer transition-colors duration-200"
+                className="ml-4 cursor-pointer text-white/70 transition-colors duration-200 hover:text-white"
               >
                 {showFullDescription ? "Show Less" : "Show More"}
               </button>
@@ -114,13 +114,13 @@ export default function WorkCard({ data, setOpenImages, clickedTag }) {
           </div>
 
           {/* Tags */}
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex flex-wrap gap-2">
             {data.tags.map((tag) => (
               <div
                 key={tag}
-                className={`bg-white/10 backdrop-blur-md text-md shadow-lg border border-white/20 px-2 py-1 rounded-2xl select-none transition-transform duration-200 ${
+                className={`text-md rounded-2xl border border-white/20 bg-white/10 px-2 py-1 shadow-lg backdrop-blur-md transition-transform duration-200 select-none ${
                   clickedTag.includes(tag)
-                    ? "bg-white/40 border-white/40 scale-110"
+                    ? "scale-110 border-white/40 bg-white/40"
                     : ""
                 }`}
               >

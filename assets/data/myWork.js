@@ -2,6 +2,23 @@
 
 // my works
 export const MyWork = [
+    //Frebbies
+    {
+        images: [
+            '/photos/frebbies/landing-pages-eight-sigma.vercel.app_.png',
+            '/photos/frebbies/landing-pages-eight-sigma.vercel.app_1.png',
+            '/photos/frebbies/landing-pages-eight-sigma.vercel.app_2.png',
+            '/photos/frebbies/landing-pages-eight-sigma.vercel.app_3.png',
+            '/photos/frebbies/landing-pages-eight-sigma.vercel.app_4.png',
+        ],
+        name: 'Modern & Minimalist Figma Website',
+        description: `A clean and modern website built based on a Figma design. This project is fully responsive across mobile, tablet, and desktop devices, offering a smooth and elegant user experience. Designed with simplicity in mind, it uses modern web technologies and animation libraries to enhance interactivity without compromising minimalism.`,
+        tags: [
+            'Html', 'Css', 'Tailwind', 'Framer Motion', 'Figma', 'Javascript', 'React', 'NextJs'
+        ],
+        git: 'https://github.com/Ignaulis/landing_pages/tree/main/frebbies',
+        live: 'https://landing-pages-eight-sigma.vercel.app/'
+    },
     //Portfolio
     {
         images: [
@@ -37,6 +54,22 @@ export const MyWork = [
         live: 'https://ignaulis.github.io/3d_apple_store/'
     },
 
+    //alien game
+    {
+        img: '/photos/alien_trap_run/game2.png',
+        images: [
+            '/photos/alien_trap_run/game2.png',
+            '/photos/alien_trap_run/game.png',
+        ],
+        name: `Alien Trap Run`,
+        description: `A fast-paced 3D arcade game where you pilot an alien ship through an endless tunnel filled with randomly generated spikes. The goal is to survive as long as possible, avoid obstacles, and beat your high score. Each run offers a unique path, with responsive controls for both desktop (keyboard) and mobile (touch). Scores are saved locally so you can keep challenging yourself to improve. Perfect for quick, addictive gameplay with a sci-fi twist.`,
+        tags: [
+            'Html', 'Css', 'Javascript', 'React', 'ThreeJs', 'R3F'
+        ],
+        git: 'https://github.com/Ignaulis/r3f_game__alien_trap_run',
+        live: 'https://ignaulis.github.io/r3f_game__alien_trap_run/'
+    },
+
     //yourbank
     {
         img: '/photos/yourbank/bank1.png',
@@ -54,22 +87,6 @@ export const MyWork = [
         git: 'https://github.com/Ignaulis/yourbank_app',
     },
 
-    //alien game
-    {
-        img: '/photos/alien_trap_run/game2.png',
-        images: [
-            '/photos/alien_trap_run/game2.png',
-            '/photos/alien_trap_run/game.png',
-        ],
-        name: `Alien Trap Run`,
-        description: `A fast-paced 3D arcade game where you pilot an alien ship through an endless tunnel filled with randomly generated spikes. The goal is to survive as long as possible, avoid obstacles, and beat your high score. Each run offers a unique path, with responsive controls for both desktop (keyboard) and mobile (touch). Scores are saved locally so you can keep challenging yourself to improve. Perfect for quick, addictive gameplay with a sci-fi twist.`,
-        tags: [
-            'Html', 'Css', 'Javascript', 'React', 'ThreeJs', 'R3F'
-        ],
-        git: 'https://github.com/Ignaulis/r3f_game__alien_trap_run',
-        live: 'https://ignaulis.github.io/r3f_game__alien_trap_run/'
-    },
-
     // fundraise app
     {
         img: '/photos/fundraise/fund.png',
@@ -85,6 +102,24 @@ export const MyWork = [
         ],
         git: 'https://github.com/Ignaulis/fundraise-app'
     },
+
+    //Kolt
+    {
+        images: [
+            '/photos/kolt/kolt.png',
+            '/photos/kolt/kolt2.png',
+            '/photos/kolt/kolt3.png',
+        ],
+        name: 'Scooter Management App',
+        description: `A modern and responsive web application for managing electric scooters. This app allows you to add scooters, track and sort them, and view detailed statistics – all with a clean, user-friendly design.`,
+        tags: [
+            'Html', 'Css', 'Javascript', 'React'
+        ],
+        git: 'https://github.com/Ignaulis/kolt_scooters_admin',
+        live: 'https://kolt-scooters-admin.vercel.app/'
+    },
+
+
 
 
 ]

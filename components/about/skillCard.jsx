@@ -1,6 +1,6 @@
 export default function SkillCard({ data, name, motion }) {
   return (
-    <div className="w-max flex flex-col mt-10 mb-8 lg:flex-nowrap flex-wrap">
+    <div className="mt-10 mb-8 flex w-max flex-col flex-wrap lg:flex-nowrap">
       <motion.div
         className="relative flex select-none"
         animate={{ rotate: [6, -4] }}
@@ -11,19 +11,19 @@ export default function SkillCard({ data, name, motion }) {
           repeatType: "mirror",
         }}
       >
-        <span className="uppercase text-white/80 text-lg sm:text-xl pl-12">
+        <span className="pl-12 text-lg text-white/80 uppercase sm:text-xl">
           {name}
         </span>
-        <div className="absolute top-1/2 left-2/5 -translate-x-1/2 -translate-y-2/5 custom-background-to-right h-full py-10 rounded-xl sm:w-full w-2/3 -z-10"></div>
+        <div className="custom-background-to-right absolute top-1/2 left-2/5 -z-10 h-full w-2/3 -translate-x-1/2 -translate-y-2/5 rounded-xl py-10 sm:w-full"></div>
       </motion.div>
-      <div className="flex sm:max-w-[400px] max-w-[350px] select-none mt-8 flex-wrap p-4 rounded justify-center gap-4 items-center w-10/12 custom-gradient-to-bottom">
+      <div className="custom-gradient-to-bottom mt-8 flex w-10/12 max-w-[350px] flex-wrap items-center justify-center gap-4 rounded p-4 select-none sm:max-w-[400px]">
         {data.map(({ icon: Icon, label, color }) => (
           <div
-            className="flex items-center bg-white/10 p-2 rounded-xl"
+            className="flex items-center rounded-xl bg-white/10 p-2"
             key={label}
           >
             <Icon size={40} style={{ color }} />
-            <span className="ml-2 text-white text-sm sm:text-lg">{label}</span>
+            <span className="ml-2 text-sm text-white sm:text-lg">{label}</span>
           </div>
         ))}
       </div>

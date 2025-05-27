@@ -13,7 +13,7 @@ const Slider = ({ left, right }) => {
       className="relative w-full overflow-hidden select-none"
     >
       <motion.div
-        className="flex bg-white/10 backdrop-blur-md shadow-lg border border-white/20 w-max"
+        className="flex w-max border border-white/20 bg-white/10 shadow-lg backdrop-blur-md"
         animate={{
           x: (left && ["0%", "-50%"]) || (right && ["-50%", "0%"]),
         }}
@@ -27,7 +27,7 @@ const Slider = ({ left, right }) => {
         {slides.map((item, index) => (
           <motion.div
             key={index}
-            className="flex items-center justify-center text-white hover:bg-white/25 shrink-0 text-2xl w-[165px] h-[50px]"
+            className="flex h-[50px] w-[165px] shrink-0 items-center justify-center text-2xl text-white hover:bg-white/25"
           >
             {item.icon && <item.icon className="mr-2" />}
             <span className="text-sm">{item.name}</span>

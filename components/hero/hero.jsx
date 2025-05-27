@@ -1,38 +1,38 @@
-import { useContext, useMemo } from "react";
+import { useContext } from "react";
 import { MobileContext } from "@/context/mobileContext";
-import { contacts } from "@/assets/data/contacts";
 import HeroButton from "../ui/heroButton";
 import { ScrollContext } from "@/context/scrollContext";
+import { SiReaddotcv } from "react-icons/si";
 
 export default function Hero() {
   const { setShowForm } = useContext(MobileContext);
   const { homeRef } = useContext(ScrollContext);
 
-  const upwork = useMemo(() => contacts.filter((e) => e.text === "UpWork"), []);
-
   return (
     <div
-      className="flex flex-col scroll-mt-32 gap-8 mb-10 lg:mb-0 lg:ml-20 h-full lg:w-1/2 w-full justify-center lg:items-start lg:justify-start items-center select-none"
+      className="mb-10 flex h-full w-full scroll-mt-32 flex-col items-center justify-center gap-8 select-none lg:mb-0 lg:ml-20 lg:w-1/2 lg:items-start lg:justify-start"
       ref={homeRef}
     >
-      <div className="text-5xl sm:text-6xl font-extrabold uppercase flex flex-col text-gradient-animation">
-        <span>frontend</span>
+      <div className="text-gradient-animation flex flex-col items-center text-5xl font-extrabold uppercase sm:text-6xl lg:items-start">
+        <span>web</span>
         <span>developer</span>
       </div>
 
-      <div className="text-white tracking-wider text-start flex justify-center text-xl w-4/5">
-        <span className="w-full px-4 sm:px-0 lg:w-full text-center lg:text-start">
-          I build clean, responsive, and detail-focused frontends — turning
-          ideas into sharp, scalable experiences.
+      <div className="flex w-4/5 justify-center text-start text-xl tracking-wider text-white">
+        <span className="w-full px-4 text-center sm:px-0 lg:w-full lg:text-start">
+          I build clean, responsive, and detail-focused web solutions — turning
+          ideas into sharp, scalable digital experiences.
         </span>
       </div>
 
-      <div className="flex lg:justify-start justify-center gap-5 w-full mt-6">
-        {upwork.map(({ href, icon: Icon }, i) => (
-          <HeroButton key={i} href={href} Icon={Icon}>
-            hire me on
-          </HeroButton>
-        ))}
+      <div className="mt-6 flex w-full justify-center gap-5 lg:justify-start">
+        <HeroButton
+          href={"/cv/ignas_naulis_cv.pdf"}
+          download
+          Icon={SiReaddotcv}
+        >
+          download cv
+        </HeroButton>
 
         <HeroButton onClick={() => setShowForm((pv) => !pv)}>
           send me

@@ -14,13 +14,13 @@ export default function Contact() {
   return (
     <div className="flex flex-col items-center gap-6">
       <div className="flex items-center gap-4">
-        <div className="flex flex-wrap-reverse justify-center items-center">
-          <div className=" text-white text-sm sm:text-xl gap-2 rounded-xl flex select-none flex-col custom-background-to-left px-4 pt-2">
+        <div className="flex flex-wrap-reverse items-center justify-center">
+          <div className="custom-background-to-left flex flex-col gap-2 rounded-xl px-4 pt-2 text-sm text-white select-none sm:text-xl">
             <span>Interested in working together?</span>
             Let’s connect and build something great.
             <span></span>
           </div>
-          <div className="w-40 h-40">
+          <div className="h-40 w-40">
             <Lottie animationData={astronout} loop={true} />
           </div>
         </div>
@@ -33,7 +33,7 @@ export default function Contact() {
             target="_blank"
             onClick={onclick ? () => onclick(setShowForm) : undefined}
             rel="noopener noreferrer"
-            className="flex text-white cursor-pointer items-center gap-2 text-xl sm:text-2xl tracking-wide custom-background p-3 rounded-2xl transition-all transform duration-400 hover:scale-120 active:scale-110"
+            className="custom-background flex transform cursor-pointer items-center gap-2 rounded-2xl p-3 text-xl tracking-wide text-white transition-all duration-400 hover:scale-120 active:scale-110 sm:text-2xl"
           >
             <Icon />
           </a>
