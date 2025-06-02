@@ -2,7 +2,7 @@
 
 An interactive and modern portfolio website where I showcase my work and introduce myself through a visually engaging and animated interface. The project features integrated 3D models and is fully responsive, built with modern web technologies to highlight both technical skills and creativity.
 
-## [> Visit My Portfolio <](https://www.ignas-naulis.dev/)
+## [--> Visit My Portfolio](https://www.ignas-naulis.dev/)
 
 ## 🚀 Tech Stack
 
